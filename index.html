@@ -1,13 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Test Apps Limited</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Apps</title>
+    <style>
+        /* Apple-style CSS */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .app-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #1d1d1f;
+            transition: transform 0.2s ease;
+        }
+        
+        .app-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 22px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-name {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        .app-category {
+            font-size: 12px;
+            color: #86868b;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #86868b;
+            border-top: 1px solid #d2d2d7;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .app-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 20px;
+            }
+            
+            .app-icon {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Test Apps Limited</h1>
-  <p>We develop apps and software solutions.</p>
-  <p>Contact us at <a href="mailto:louiecompacc@ygmail.com">Louie@domain.com</a></p>
+    <div class="container">
+        <h1>Test Apps</h1>
+        
+        <div class="app-grid">
+            <!-- Love Language Test & Quiz -->
+            <a href="https://apps.apple.com/us/app/love-language-test-quiz/id6745423497" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ae/6b/c6/ae6bc66e-d149-9da2-397b-a6cd4ff16a5f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Love Language Test & Quiz" class="app-icon">
+                <div class="app-name">Love Language Test & Quiz</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- Compatibility Test & Love Quiz -->
+            <a href="https://apps.apple.com/us/app/compatibility-test-love-quiz/id6744841287" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/40/54/81/40548182-635e-7436-fbe9-03e016a9cd05/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Compatibility Test & Love Quiz" class="app-icon">
+                <div class="app-name">Compatibility Test & Love Quiz</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- Autism Test App -->
+            <a href="https://apps.apple.com/us/app/autism-test-app-symptom-quiz/id6742079322" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/e0/91/35e091d7-e5d9-ec8c-e112-d9e2d8590fd2/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Autism Test App" class="app-icon">
+                <div class="app-name">Autism Test App - Symptom Quiz</div>
+                <div class="app-category">Health & Fitness</div>
+            </a>
+            
+            <!-- Depression Test -->
+            <a href="https://apps.apple.com/us/app/depression-test-symptom-quiz/id6741728588" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/b8/64/ecb86458-acc9-5941-24e3-a156e70e3f86/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Depression Test" class="app-icon">
+                <div class="app-name">Depression Test - Symptom Quiz</div>
+                <div class="app-category">Health & Fitness</div>
+            </a>
+            
+            <!-- Anxiety Test -->
+            <a href="https://apps.apple.com/us/app/anxiety-test-gad-7-assessment/id6738595770" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8c/59/3e/8c593e63-7b4f-a671-87d2-208d557ccbcd/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Anxiety Test" class="app-icon">
+                <div class="app-name">Anxiety Test: GAD-7 Assessment</div>
+                <div class="app-category">Health & Fitness</div>
+            </a>
+            
+            <!-- Personality Test -->
+            <a href="https://apps.apple.com/us/app/personality-test-big-five/id6738060599" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/b6/74/d3b67488-5afa-b9a4-7efe-fbfd534758c2/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/146x0w.png" alt="Personality Test" class="app-icon">
+                <div class="app-name">Personality Test: Big Five</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- ADHD Test -->
+            <a href="https://apps.apple.com/us/app/adhd-test-symptom-assessment/id6737468288" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8f/ff/d4/8fffd4a8-14d0-8b1c-22cb-a85349fe82dd/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/146x0w.png" alt="ADHD Test" class="app-icon">
+                <div class="app-name">ADHD Test - Symptom Assessment</div>
+                <div class="app-category">Health & Fitness</div>
+            </a>
+            
+            <!-- IQ Test - Real IQ Quiz -->
+            <a href="https://apps.apple.com/us/app/iq-test-real-iq-quiz/id6736963958" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/03/d6/fc/03d6fc49-4e27-1b17-4c8a-f655fbd3d512/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="IQ Test - Real IQ Quiz" class="app-icon">
+                <div class="app-name">IQ Test - Real IQ Quiz</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- IQ Test - Full Cognitive Test -->
+            <a href="https://apps.apple.com/us/app/iq-test-full-cognitive-test/id6476054624" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/18/9d/e0/189de078-5ac9-9598-862b-761935abc68e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="IQ Test - Full Cognitive Test" class="app-icon">
+                <div class="app-name">IQ Test - Full Cognitive Test</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- IQ Test - Full Aptitude Test -->
+            <a href="https://apps.apple.com/us/app/iq-test-full-aptitude-test/id1505911173" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1f/27/5d/1f275d07-f013-e6c1-fbaf-2301a87a1e45/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/146x0w.png" alt="IQ Test - Full Aptitude Test" class="app-icon">
+                <div class="app-name">IQ Test - Full Aptitude Test</div>
+                <div class="app-category">Education</div>
+            </a>
+            
+            <!-- Fuzzy Fish -->
+            <a href="https://apps.apple.com/us/app/fuzzy-fish/id1448821869" class="app-item">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/46/c7/ee/46c7ee38-8cad-ad10-e23e-ebcc319d0cda/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/146x0w.png" alt="Fuzzy Fish" class="app-icon">
+                <div class="app-name">Fuzzy Fish</div>
+                <div class="app-category">Casual</div>
+            </a>
+        </div>
+        
+        <footer>
+            &copy; 2025 Test Apps. All apps are created by Louie Murphy.
+        </footer>
+    </div>
 </body>
 </html>
