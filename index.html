@@ -77,7 +77,8 @@
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--heading-color);
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 20px;
             opacity: 0;
             transform: translateY(30px);
@@ -89,7 +90,8 @@
             font-size: 62px;
             line-height: 1.1;
             font-weight: 400;
-            color: var(--heading-color);
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 30px;
         }
         
@@ -121,7 +123,7 @@
         
         /* Section styles */
         .section {
-            padding: 80px 5%;
+            padding: 40px 5%;
             position: relative;
         }
         
@@ -497,7 +499,7 @@
             </div>
         </div>
         <div class="ipad-container">
-            <img src="ipad.png" alt="iPad showing our apps">
+            <img src="ipad.png" alt="Our apps showcase" class="ipad-img">
         </div>
     </section>
 
@@ -596,7 +598,7 @@
     </section>
         
     <!-- Contact Section -->
-    <section class="section">
+    <section id="contact-section" class="section">
         <div class="section-inner contact-section">
             <h2>Contact Us</h2>
             <form class="contact-form">
@@ -662,11 +664,10 @@
                     <div class="footer-logo">test apps</div>
                 </div>
                 <div class="footer-contact">
-                    123-456-7890<br>
-                    info@mysite.com<br><br>
-                    500 Terry Francine Street<br>
-                    4th Floor, San Francisco<br>
-                    CA 94158
+                    +64 4 123 4567<br>
+                    info@testappsco.com<br><br>
+                    Created with <i class="fas fa-heart"></i> in Pōneke, Aotearoa<br>
+                    Wellington, New Zealand
                 </div>
                 <div class="footer-links">
                     <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -681,14 +682,14 @@
                     <a href="#" class="footer-link">Accessibility Statement</a>
                 </div>
                 <div class="footer-copyright">
-                    © 2025 by test apps. Powered and secured by Wix
+                    © 2025 by test apps
                 </div>
             </div>
         </div>
     </footer>
     
     <!-- Floating Chat Button -->
-    <a href="#" class="chat-btn">
+    <a href="#contact-section" class="chat-btn">
         <i class="far fa-comment-dots"></i>
         Let's Chat!
     </a>
@@ -698,23 +699,34 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Your JavaScript could go here if needed
             
-            // To make the iPad image fixed while scrolling
+            // To make the iPad image fixed while scrolling with parallax effect
             const heroSection = document.querySelector('.hero-section');
             const ipadContainer = document.querySelector('.ipad-container');
+            const ipadImage = document.querySelector('.ipad-img');
             
             window.addEventListener('scroll', function() {
                 // Only apply iPad fixed position if it's visible (desktop)
                 if (window.innerWidth >= 992) {
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                     const heroSectionBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const parallaxSpeed = 0.5;
                     
                     if (scrollTop <= heroSectionBottom) {
                         ipadContainer.style.position = 'fixed';
+                        // Parallax effect
+                        ipadImage.style.transform = `translateY(${scrollTop * parallaxSpeed}px)`;
                     } else {
                         ipadContainer.style.position = 'absolute';
                         ipadContainer.style.top = (heroSectionBottom - ipadContainer.offsetHeight / 2) + 'px';
                     }
                 }
+            });
+            
+            // Smooth scroll for the "Let's Chat" button
+            document.querySelector('.chat-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                const contactSection = document.querySelector('#contact-section');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
