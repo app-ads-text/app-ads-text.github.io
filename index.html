@@ -7,17 +7,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Nunito:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Base styles */
         :root {
-            --primary-bg: rgb(199, 230, 237);
-            --heading-color: #0F3057;
-            --text-color: #333333;
-            --accent-color: #FF6B6B;
-            --section-bg: rgba(255, 255, 255, 0.5);
-            --section-radius: 16px;
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --primary-bg: #f5f5f5;
+            --secondary-bg: #e5e5e5;
+            --heading-color: #333333;
+            --text-color: #444444;
+            --accent-color: #666666;
+            --section-bg: rgba(255, 255, 255, 0.7);
+            --section-radius: 0px;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
         
         * {
@@ -27,7 +28,7 @@
         }
         
         body {
-            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--primary-bg);
@@ -35,69 +36,104 @@
             line-height: 1.6;
         }
         
+        /* Header styles */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('banner.jpg') center center/cover no-repeat;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+        
+        .hero-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 62px;
+            line-height: 1.1;
+            font-weight: 400;
+            color: var(--heading-color);
+            margin-bottom: 30px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* iPad fixed position */
+        .ipad-container {
+            position: fixed;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+            display: none; /* Initially hidden on mobile */
+        }
+        
+        .ipad-container img {
+            max-height: 70vh;
+            box-shadow: var(--shadow);
+        }
+        
         /* Section styles */
         .section {
-            padding: 60px 20px;
-            margin-bottom: 30px;
+            padding: 80px 5%;
+            position: relative;
         }
         
         .section-inner {
             max-width: 1200px;
             margin: 0 auto;
             background-color: var(--section-bg);
-            border-radius: var(--section-radius);
-            padding: 40px;
-            box-shadow: var(--shadow);
+            padding: 60px 40px;
             position: relative;
-            overflow: hidden;
         }
         
-        .section-inner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, var(--heading-color), var(--accent-color));
-        }
-        
-        /* Header styles */
-        header {
-            text-align: center;
-            padding: 80px 20px 60px;
-        }
-        
-        .logo-title {
-            font-family: 'Pacifico', cursive;
-            font-size: 68px;
-            font-weight: 400;
-            color: var(--heading-color);
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--heading-color);
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60%;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        /* Info section styles */
+        /* Intro section styles */
         .section-intro {
             max-width: 800px;
             margin: 0 auto 30px;
@@ -108,6 +144,16 @@
         /* App grid styles */
         .app-grid-container {
             text-align: center;
+        }
+        
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--heading-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
         }
         
         .app-grid {
@@ -126,10 +172,14 @@
             transition: all 0.3s ease;
             padding: 15px;
             border-radius: 12px;
+            filter: grayscale(100%);
+            opacity: 0.9;
         }
         
         .app-item:hover {
             transform: translateY(-10px);
+            filter: grayscale(0%);
+            opacity: 1;
             background-color: rgba(255, 255, 255, 0.7);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
@@ -179,7 +229,7 @@
         .form-label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--heading-color);
         }
         
@@ -187,9 +237,9 @@
         .form-textarea {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid rgba(15, 48, 87, 0.2);
-            border-radius: 8px;
-            font-family: 'Nunito', sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 0;
+            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             transition: border-color 0.3s;
         }
@@ -209,20 +259,19 @@
             background-color: var(--heading-color);
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 0;
             padding: 12px 30px;
             font-family: 'Outfit', sans-serif;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(15, 48, 87, 0.3);
+            letter-spacing: 1px;
         }
         
         .submit-btn:hover {
-            background-color: var(--accent-color);
+            background-color: #000;
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
         }
         
         /* Legal section styles */
@@ -230,22 +279,19 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 30px;
         }
         
         .legal-card {
-            background-color: white;
-            border-radius: 10px;
+            background-color: transparent;
             padding: 20px;
             min-width: 150px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transition: all 0.3s;
         }
         
         .legal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
         
         .legal-icon {
@@ -258,39 +304,159 @@
             color: var(--heading-color);
             text-decoration: none;
             font-family: 'Outfit', sans-serif;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 15px;
             transition: color 0.3s;
         }
         
         .legal-link:hover {
-            color: var(--accent-color);
+            color: #000;
         }
         
         /* Footer styles */
         footer {
-            background-color: var(--heading-color);
-            padding: 25px;
-            text-align: center;
+            background-color: #f0f0f0;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px 20px;
         }
         
-        .footer-text {
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .footer-brand {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+        
+        .footer-contact {
+            margin-bottom: 20px;
             font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--heading-color);
             color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .footer-social-icon:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        
+        .footer-links-right {
+            text-align: right;
+        }
+        
+        .footer-link {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--heading-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #000;
+        }
+        
+        .footer-copyright {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        /* Let's Chat floating button */
+        .chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--heading-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-btn:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
         /* Responsive styles */
-        @media (max-width: 768px) {
-            .logo-title {
+        @media (min-width: 992px) {
+            .ipad-container {
+                display: block;
+            }
+            
+            .hero-content {
+                padding-right: 50%;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
                 font-size: 48px;
             }
             
-            h2 {
-                font-size: 28px;
+            .section-inner {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 38px;
             }
             
-            .section-inner {
-                padding: 30px 20px;
+            h2 {
+                font-size: 32px;
             }
             
             .app-grid {
@@ -303,14 +469,17 @@
                 height: 100px;
             }
             
-            .legal-section {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+            .legal-card {
+                min-width: 120px;
             }
             
-            .legal-card {
-                width: 80%;
+            .footer-right {
+                align-items: flex-start;
+                margin-top: 30px;
+            }
+            
+            .footer-links-right {
+                text-align: left;
             }
         }
     </style>
@@ -318,10 +487,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1 class="logo-title">Test Apps</h1>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-subtitle">Discover Our Apps</div>
+                <h1 class="hero-title">EXPERIENCE A COLLECTION OF OUTSTANDING APPS ON THE APPLE APP STORE.</h1>
+            </div>
+        </div>
+        <div class="ipad-container">
+            <img src="ipad.png" alt="iPad showing our apps">
+        </div>
+    </section>
 
     <!-- Intro Section -->
     <section class="section">
@@ -478,7 +656,67 @@
     
     <!-- Footer -->
     <footer>
-        <p class="footer-text">&copy; 2025 Test Apps. All rights reserved. All apps are created by Test Apps Limited. Eva Stinks.</p>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <div class="footer-logo">test apps</div>
+                </div>
+                <div class="footer-contact">
+                    123-456-7890<br>
+                    info@mysite.com<br><br>
+                    500 Terry Francine Street<br>
+                    4th Floor, San Francisco<br>
+                    CA 94158
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links-right">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Accessibility Statement</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 by test apps. Powered and secured by Wix
+                </div>
+            </div>
+        </div>
     </footer>
+    
+    <!-- Floating Chat Button -->
+    <a href="#" class="chat-btn">
+        <i class="far fa-comment-dots"></i>
+        Let's Chat!
+    </a>
+    
+    <script>
+        // Animation for the hero section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Your JavaScript could go here if needed
+            
+            // To make the iPad image fixed while scrolling
+            const heroSection = document.querySelector('.hero-section');
+            const ipadContainer = document.querySelector('.ipad-container');
+            
+            window.addEventListener('scroll', function() {
+                // Only apply iPad fixed position if it's visible (desktop)
+                if (window.innerWidth >= 992) {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const heroSectionBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    
+                    if (scrollTop <= heroSectionBottom) {
+                        ipadContainer.style.position = 'fixed';
+                    } else {
+                        ipadContainer.style.position = 'absolute';
+                        ipadContainer.style.top = (heroSectionBottom - ipadContainer.offsetHeight / 2) + 'px';
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
