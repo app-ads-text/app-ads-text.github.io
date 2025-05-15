@@ -5,108 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Apps</title>
     <style>
-        /* Apple-style CSS */
+        /* Base styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f7;
-            color: #1d1d1f;
+            background-color: rgb(199, 230, 237);
+            color: #333333;
+            line-height: 1.6;
         }
         
-        /* Navigation styles */
-        nav {
-            background-color: #333;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin: 0 15px;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-            padding: 15px 0;
-            display: inline-block;
-        }
-        
-        .nav-links a:hover {
-            color: #a1a1a6;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        
-        /* Main content styles */
+        /* Container styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
         
-        h1 {
-            font-size: 40px;
-            font-weight: 600;
+        /* Header styles */
+        header {
             text-align: center;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #0F3057;
             margin-bottom: 20px;
         }
         
         h2 {
             font-size: 28px;
             font-weight: 500;
+            color: #0F3057;
             margin-bottom: 15px;
         }
         
-        p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
+        /* Info section styles */
         .section-intro {
             max-width: 800px;
             margin: 0 auto 50px;
             text-align: center;
         }
         
+        /* App grid styles */
         .app-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 70px;
         }
         
         .app-item {
@@ -114,7 +62,7 @@
             flex-direction: column;
             align-items: center;
             text-decoration: none;
-            color: #1d1d1f;
+            color: #333333;
             transition: transform 0.2s ease;
         }
         
@@ -139,88 +87,65 @@
         
         .app-category {
             font-size: 12px;
-            color: #86868b;
+            color: #666;
             text-align: center;
+        }
+        
+        /* Contact section styles */
+        .contact-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-email {
+            font-size: 20px;
+            font-weight: 500;
+            color: #FF6B6B;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-email:hover {
+            color: #e45a5a;
+        }
+        
+        /* Legal section styles */
+        .legal-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .legal-link {
+            color: #0F3057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .legal-link:hover {
+            color: #FF6B6B;
         }
         
         /* Footer styles */
         footer {
-            background-color: #f2f2f2;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-        }
-        
-        .footer-links h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #515154;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .footer-bottom {
+            background-color: rgba(15, 48, 87, 0.1);
+            padding: 20px;
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #d2d2d7;
-            color: #86868b;
+        }
+        
+        .footer-text {
             font-size: 12px;
+            color: #0F3057;
         }
         
         /* Responsive styles */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background-color: #333;
-                flex-direction: column;
-                padding: 0;
-                margin: 0;
-            }
-            
-            .nav-links.show {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0;
-                text-align: center;
-                border-top: 1px solid #444;
-            }
-            
-            .nav-links a {
-                padding: 15px;
-                display: block;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
+            h1 {
+                font-size: 36px;
             }
             
             .app-grid {
@@ -233,38 +158,28 @@
                 height: 100px;
             }
             
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .legal-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Test Apps</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="apps.html">Apps</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Header -->
+    <header>
+        <h1>Test Apps</h1>
+    </header>
 
     <!-- Main Content -->
     <div class="container">
-        <h1>Test Apps</h1>
-        
+        <!-- Info Section -->
         <div class="section-intro">
             <p>Discover our collection of innovative apps designed to help you learn, assess, and improve. From educational tools to health assessments, we're committed to providing quality applications for iOS.</p>
         </div>
         
+        <!-- Featured Apps -->
         <h2>Featured Apps</h2>
         <div class="app-grid">
             <!-- Love Language Test & Quiz -->
@@ -344,67 +259,25 @@
                 <div class="app-category">Casual</div>
             </a>
         </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h2>Contact Us</h2>
+            <a href="mailto:louie.j.murphy@gmail.com" class="contact-email">louie.j.murphy@gmail.com</a>
+        </div>
+        
+        <!-- Legal Section -->
+        <div class="legal-section">
+            <a href="privacy.html" class="legal-link">Privacy Policy</a>
+            <a href="terms.html" class="legal-link">Terms of Service</a>
+            <a href="eula.html" class="legal-link">EULA</a>
+            <a href="cookies.html" class="legal-link">Cookie Policy</a>
+        </div>
     </div>
     
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <h3>Test Apps</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="apps.html">Our Apps</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="press.html">Press</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="support.html">Help Center</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="report-issue.html">Report an Issue</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="cookies.html">Cookie Policy</a></li>
-                    <li><a href="eula.html">EULA</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href="https://twitter.com/testapps" target="_blank">Twitter</a></li>
-                    <li><a href="https://facebook.com/testapps" target="_blank">Facebook</a></li>
-                    <li><a href="https://instagram.com/testapps" target="_blank">Instagram</a></li>
-                    <li><a href="https://linkedin.com/company/testapps" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Test Apps. All rights reserved. All apps are created by Test Apps Limited. Eva Stinks.</p>
-        </div>
+        <p class="footer-text">&copy; 2025 Test Apps. All rights reserved. All apps are created by Test Apps Limited. Eva Stinks.</p>
     </footer>
-    
-    <!-- JavaScript for mobile menu toggle -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('show');
-            });
-        });
-    </script>
 </body>
 </html>
