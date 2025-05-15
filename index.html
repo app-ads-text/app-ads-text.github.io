@@ -14,17 +14,92 @@
             color: #1d1d1f;
         }
         
+        /* Navigation styles */
+        nav {
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin: 0 15px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+            padding: 15px 0;
+            display: inline-block;
+        }
+        
+        .nav-links a:hover {
+            color: #a1a1a6;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Main content styles */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
         
         h1 {
             font-size: 40px;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
         }
         
         .app-grid {
@@ -68,16 +143,86 @@
             text-align: center;
         }
         
+        /* Footer styles */
         footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #86868b;
-            border-top: 1px solid #d2d2d7;
+            background-color: #f2f2f2;
+            padding: 40px 20px;
             margin-top: 40px;
         }
         
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #515154;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #d2d2d7;
+            color: #86868b;
+            font-size: 12px;
+        }
+        
+        /* Responsive styles */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .nav-links.show {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                border-top: 1px solid #444;
+            }
+            
+            .nav-links a {
+                padding: 15px;
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .app-grid {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
                 gap: 20px;
@@ -87,13 +232,40 @@
                 width: 100px;
                 height: 100px;
             }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Test Apps</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="apps.html">Apps</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
         <h1>Test Apps</h1>
         
+        <div class="section-intro">
+            <p>Discover our collection of innovative apps designed to help you learn, assess, and improve. From educational tools to health assessments, we're committed to providing quality applications for iOS.</p>
+        </div>
+        
+        <h2>Featured Apps</h2>
         <div class="app-grid">
             <!-- Love Language Test & Quiz -->
             <a href="https://apps.apple.com/us/app/love-language-test-quiz/id6745423497" class="app-item">
@@ -172,10 +344,67 @@
                 <div class="app-category">Casual</div>
             </a>
         </div>
-        
-        <footer>
-            &copy; 2025 Test Apps. All apps are created by Test Apps Limited. Eva Stinks
-        </footer>
     </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Test Apps</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="apps.html">Our Apps</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="press.html">Press</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Help Center</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="report-issue.html">Report an Issue</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="eula.html">EULA</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://twitter.com/testapps" target="_blank">Twitter</a></li>
+                    <li><a href="https://facebook.com/testapps" target="_blank">Facebook</a></li>
+                    <li><a href="https://instagram.com/testapps" target="_blank">Instagram</a></li>
+                    <li><a href="https://linkedin.com/company/testapps" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Test Apps. All rights reserved. All apps are created by Louie Murphy.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
