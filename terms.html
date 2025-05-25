@@ -1,1 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Terms and Conditions | Test Apps</title>
+   <!-- Favicon -->
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+   <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <style>
+       /* Base styles */
+       :root {
+           --primary-bg: #fafafa;
+           --secondary-bg: #f0f0f0;
+           --heading-color: #2c2c2c;
+           --text-color: #555555;
+           --accent-color: #777777;
+           --section-bg: rgba(255, 255, 255, 0.9);
+           --section-radius: 8px;
+           --shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+           --border-color: #e8e8e8;
+       }
+       
+       * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+       }
+       
+       body {
+           font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: var(--primary-bg);
+           color: var(--text-color);
+           line-height: 1.7;
+       }
+       
+       /* Header */
+       .header {
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           color: white;
+           padding: 80px 20px;
+           text-align: center;
+           position: relative;
+           overflow: hidden;
+       }
+       
+       .header::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="0%" r="100%"><stop offset="0%" stop-color="white" stop-opacity="0.1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><rect width="100" height="20" fill="url(%23a)"/></svg>');
+           opacity: 0.3;
+       }
+       
+       .header-content {
+           position: relative;
+           z-index: 2;
+           max-width: 800px;
+           margin: 0 auto;
+       }
+       
+       .header-subtitle {
+           font-size: 16px;
+           font-weight: 400;
+           margin-bottom: 15px;
+           opacity: 0.9;
+           letter-spacing: 1px;
+       }
+       
+       .header-title {
+           font-family: 'DM Serif Display', serif;
+           font-size: 48px;
+           font-weight: 400;
+           margin-bottom: 20px;
+           line-height: 1.2;
+       }
+       
+       .header-description {
+           font-size: 18px;
+           opacity: 0.9;
+           max-width: 600px;
+           margin: 0 auto;
+       }
+       
+       /* Main content */
+       .main-content {
+           max-width: 900px;
+           margin: 0 auto;
+           padding: 60px 20px;
+       }
+       
+       .content-card {
+           background-color: var(--section-bg);
+           border-radius: var(--section-radius);
+           box-shadow: var(--shadow);
+           padding: 50px;
+           margin-bottom: 30px;
+           border: 1px solid var(--border-color);
+       }
+       
+       /* Typography */
+       h1 {
+           font-family: 'DM Serif Display', serif;
+           font-size: 36px;
+           color: var(--heading-color);
+           margin-bottom: 30px;
+           text-align: center;
+       }
+       
+       h2 {
+           font-family: 'DM Serif Display', serif;
+           font-size: 28px;
+           color: var(--heading-color);
+           margin: 40px 0 20px 0;
+           padding-bottom: 10px;
+           border-bottom: 2px solid #f0f0f0;
+       }
+       
+       h3 {
+           font-family: 'Outfit', sans-serif;
+           font-size: 20px;
+           font-weight: 600;
+           color: var(--heading-color);
+           margin: 30px 0 15px 0;
+       }
+       
+       p {
+           margin-bottom: 18px;
+           font-size: 16px;
+           line-height: 1.7;
+       }
+       
+       /* Lists */
+       ul, ol {
+           margin: 20px 0;
+           padding-left: 30px;
+       }
+       
+       li {
+           margin-bottom: 12px;
+           line-height: 1.6;
+       }
+       
+       /* Links */
+       a {
+           color: #667eea;
+           text-decoration: none;
+           transition: color 0.3s ease;
+       }
+       
+       a:hover {
+           color: #764ba2;
+           text-decoration: underline;
+       }
+       
+       /* Special content boxes */
+       .important-notice {
+           background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+           color: #2d3436;
+           padding: 25px;
+           border-radius: var(--section-radius);
+           margin: 30px 0;
+           border-left: 5px solid #e17055;
+       }
+       
+       .app-list {
+           background-color: #f8f9fa;
+           border: 1px solid var(--border-color);
+           border-radius: var(--section-radius);
+           padding: 25px;
+           margin: 25px 0;
+       }
+       
+       .app-list h4 {
+           font-family: 'Outfit', sans-serif;
+           font-size: 18px;
+           font-weight: 600;
+           margin-bottom: 15px;
+           color: var(--heading-color);
+       }
+       
+       .app-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+           gap: 15px;
+           margin-top: 15px;
+       }
+       
+       .app-item {
+           display: flex;
+           align-items: center;
+           padding: 10px;
+           background: white;
+           border-radius: 6px;
+           border: 1px solid #e9ecef;
+       }
+       
+       .app-icon {
+           width: 32px;
+           height: 32px;
+           border-radius: 6px;
+           margin-right: 10px;
+           background: linear-gradient(135deg, #667eea, #764ba2);
+       }
+       
+       .app-name {
+           font-size: 14px;
+           font-weight: 500;
+           color: var(--text-color);
+       }
+       
+       /* Contact info */
+       .contact-info {
+           background: linear-gradient(135deg, #e8f4f8 0%, #f1f8ff 100%);
+           padding: 25px;
+           border-radius: var(--section-radius);
+           margin: 30px 0;
+           text-align: center;
+           border: 1px solid #d1ecf1;
+       }
+       
+       /* Footer */
+       footer {
+           background-color: #f0f0f0;
+           border-top: 1px solid #e0e0e0;
+           padding: 40px 20px;
+           margin-top: 60px;
+       }
+       
+       .footer-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: 1fr;
+       }
+       
+       @media (min-width: 768px) {
+           .footer-content {
+               grid-template-columns: 1fr 1fr;
+           }
+       }
+       
+       .footer-brand {
+           margin-bottom: 20px;
+       }
+       
+       .footer-logo {
+           font-family: 'DM Serif Display', serif;
+           font-size: 24px;
+           margin-bottom: 10px;
+           color: var(--heading-color);
+       }
+       
+       .footer-contact {
+           margin-bottom: 20px;
+           font-size: 14px;
+           line-height: 1.8;
+       }
+       
+       .footer-links {
+           display: flex;
+           gap: 15px;
+       }
+       
+       .footer-social-icon {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 36px;
+           height: 36px;
+           background-color: var(--heading-color);
+           color: white;
+           border-radius: 50%;
+           transition: all 0.3s;
+       }
+       
+       .footer-social-icon:hover {
+           background-color: #000;
+           transform: translateY(-3px);
+       }
+       
+       .footer-right {
+           display: flex;
+           flex-direction: column;
+           align-items: flex-end;
+           justify-content: space-between;
+       }
+       
+       .footer-links-right {
+           text-align: right;
+       }
+       
+       .footer-link {
+           display: block;
+           margin-bottom: 8px;
+           color: var(--heading-color);
+           text-decoration: none;
+           font-size: 14px;
+           transition: color 0.3s;
+       }
+       
+       .footer-link:hover {
+           color: #000;
+       }
+       
+       .footer-copyright {
+           margin-top: 20px;
+           font-size: 13px;
+           color: #777;
+       }
+       
+       /* Responsive */
+       @media (max-width: 768px) {
+           .header-title {
+               font-size: 36px;
+           }
+           
+           .content-card {
+               padding: 30px 25px;
+           }
+           
+           .main-content {
+               padding: 40px 15px;
+           }
+           
+           .footer-right {
+               align-items: flex-start;
+               margin-top: 30px;
+           }
+           
+           .footer-links-right {
+               text-align: left;
+           }
+       }
+   </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+       <div class="header-content">
+           <div class="header-subtitle">Legal Documentation</div>
+           <h1 class="header-title">Terms and Conditions</h1>
+           <p class="header-description">Please read these terms carefully before using our applications and services</p>
+       </div>
+   </header>
 
+   <!-- Main Content -->
+   <main class="main-content">
+       <div class="content-card">
+           <p><strong>Last Updated:</strong> May 25, 2025</p>
+           <p><strong>Effective Date:</strong> May 25, 2025</p>
+
+           <div class="important-notice">
+               <p><strong>Important:</strong> By downloading, installing, accessing, or using any of our mobile applications or services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our applications or services.</p>
+           </div>
+
+           <h2>1. Introduction and Acceptance</h2>
+           <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between Test Apps Limited, a company incorporated in New Zealand ("we," "us," "our," or "Company"), and you ("user," "you," or "your") regarding your use of our mobile applications and related services.</p>
+           
+           <p>These Terms apply to all our mobile applications including but not limited to:</p>
+           
+           <div class="app-list">
+               <h4>Our Applications Include:</h4>
+               <div class="app-grid">
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Love Language Test & Quiz</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Compatibility Test & Love Quiz</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Autism Test App - Symptom Quiz</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Depression Test - Symptom Quiz</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Anxiety Test: GAD-7 Assessment</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Personality Test: Big Five</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">ADHD Test - Symptom Assessment</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">IQ Test - Real IQ Quiz</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">IQ Test - Full Cognitive Test</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">IQ Test - Full Aptitude Test</div>
+                   </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Fuzzy Fish</div>
+                   </div>
+               </div>
+               <p style="margin-top: 15px; font-style: italic; font-size: 14px;">*This list includes our current applications but is not limited to these apps. Additional applications may be released and covered under these terms.</p>
+           </div>
+
+           <h2>2. Eligibility and User Requirements</h2>
+           <h3>2.1 Age Requirements</h3>
+           <p>You must be at least 17 years of age to use our applications. If you are under 18, you represent that you have obtained permission from your parent or legal guardian to use our services. We do not knowingly collect personal information from children under 13 years of age.</p>
+           
+           <h3>2.2 Capacity to Contract</h3>
+           <p>You represent and warrant that:</p>
+           <ul>
+               <li>You have the legal capacity to enter into these Terms</li>
+               <li>You are not prohibited by any law or legal order from using our services</li>
+               <li>Your use of our applications will not violate any applicable laws or regulations</li>
+               <li>All information you provide is accurate and truthful</li>
+           </ul>
+
+           <h2>3. License and Permitted Use</h2>
+           <h3>3.1 Limited License</h3>
+           <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use our applications on your compatible mobile device solely for your personal, non-commercial use.</p>
+           
+           <h3>3.2 Restrictions</h3>
+           <p>You agree not to:</p>
+           <ul>
+               <li>Copy, modify, distribute, sell, or lease any part of our applications</li>
+               <li>Reverse engineer, decompile, or attempt to extract source code</li>
+               <li>Remove or alter any proprietary notices or labels</li>
+               <li>Use our applications for any unlawful or prohibited purpose</li>
+               <li>Circumvent or disable any security features or access controls</li>
+               <li>Use automated systems to access our services</li>
+               <li>Interfere with or disrupt our services or servers</li>
+           </ul>
+
+           <h2>4. Health and Medical Disclaimers</h2>
+           <div class="important-notice">
+               <p><strong>Critical Health Disclaimer:</strong> Our health-related applications (including but not limited to tests for depression, anxiety, ADHD, and autism) are designed for educational and informational purposes only. They are not intended to diagnose, treat, cure, or prevent any medical condition.</p>
+           </div>
+           
+           <h3>4.1 Not Medical Advice</h3>
+           <p>The content, assessments, and results provided by our applications:</p>
+           <ul>
+               <li>Do not constitute medical, psychological, or professional advice</li>
+               <li>Should not be used as a substitute for professional medical consultation</li>
+               <li>Are not diagnostic tools and cannot replace clinical evaluation</li>
+               <li>May not be accurate or applicable to your specific situation</li>
+           </ul>
+           
+           <h3>4.2 Professional Consultation Required</h3>
+           <p>You should always consult with qualified healthcare professionals for:</p>
+           <ul>
+               <li>Any health concerns or symptoms</li>
+               <li>Medical diagnosis or treatment decisions</li>
+               <li>Mental health evaluations or therapy</li>
+               <li>Medication decisions or changes</li>
+           </ul>
+           
+           <h3>4.3 Emergency Situations</h3>
+           <p>If you are experiencing a medical or mental health emergency, do not rely on our applications. Contact emergency services immediately or visit your nearest emergency department.</p>
+
+           <h2>5. Apple App Store Compliance</h2>
+           <h3>5.1 App Store Terms</h3>
+           <p>Your use of our applications is also subject to the terms and conditions of the Apple App Store. In the event of any conflict between these Terms and the App Store terms, the App Store terms shall prevail regarding your relationship with Apple.</p>
+           
+           <h3>5.2 Third-Party Beneficiary</h3>
+           <p>Apple and its subsidiaries are third-party beneficiaries of these Terms with respect to your use of our applications. Apple has the right to enforce these Terms against you.</p>
+           
+           <h3>5.3 Apple Disclaimers</h3>
+           <p>Apple is not responsible for our applications, their content, or any claims related to them. Any complaints or issues should be directed to us at <a href="mailto:hello@testapps.com">hello@testapps.com</a>.</p>
+
+           <h2>6. Subscriptions and In-App Purchases</h2>
+           <h3>6.1 Premium Features</h3>
+           <p>Some of our applications offer premium features through subscriptions or one-time purchases. All transactions are processed through the Apple App Store and are subject to Apple's payment terms.</p>
+           
+           <h3>6.2 Subscription Terms</h3>
+           <ul>
+               <li>Subscriptions automatically renew unless cancelled at least 24 hours before the current period ends</li>
+               <li>You can manage or cancel subscriptions through your Apple App Store account settings</li>
+               <li>Refunds are handled according to Apple's refund policy</li>
+               <li>We do not have access to your payment information</li>
+           </ul>
+           
+           <h3>6.3 Free Trials</h3>
+           <p>Free trial periods, if offered, will automatically convert to paid subscriptions unless cancelled. You are responsible for cancelling before the trial period ends to avoid charges.</p>
+
+           <h2>7. Privacy and Data Protection</h2>
+           <p>Your privacy is important to us. Our collection, use, and protection of your personal information is governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. By using our applications, you consent to our privacy practices as described in the Privacy Policy.</p>
+
+           <h2>8. Intellectual Property Rights</h2>
+           <h3>8.1 Our Rights</h3>
+           <p>We retain all rights, title, and interest in and to our applications, including all intellectual property rights. This includes but is not limited to:</p>
+           <ul>
+               <li>Software code, algorithms, and functionality</li>
+               <li>Visual designs, graphics, and user interfaces</li>
+               <li>Content, text, and assessment questions</li>
+               <li>Trademarks, logos, and brand elements</li>
+           </ul>
+           
+           <h3>8.2 User Content</h3>
+           <p>Any content you provide through our applications remains your property. However, by providing content, you grant us a limited license to use it solely for providing our services to you.</p>
+
+           <h2>9. Disclaimers and Limitations</h2>
+           <h3>9.1 Service Availability</h3>
+           <p>We strive to maintain service availability but do not guarantee uninterrupted access. Our applications may be temporarily unavailable due to maintenance, updates, or technical issues.</p>
+           
+           <h3>9.2 Accuracy Disclaimer</h3>
+           <p>While we strive for accuracy, we make no warranties regarding:</p>
+           <ul>
+               <li>The accuracy, completeness, or reliability of our content</li>
+               <li>The validity or scientific accuracy of test results</li>
+               <li>The suitability of our applications for any particular purpose</li>
+           </ul>
+           
+           <h3>9.3 AS-IS Basis</h3>
+           <p>Our applications are provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+
+           <h2>10. Limitation of Liability</h2>
+           <p>To the maximum extent permitted by applicable law:</p>
+           <ul>
+               <li>We shall not be liable for any indirect, incidental, special, consequential, or punitive damages</li>
+               <li>Our total liability to you shall not exceed the amount you have paid us in the past 12 months</li>
+               <li>We are not liable for any damages resulting from your reliance on information provided by our applications</li>
+               <li>We are not responsible for any health consequences resulting from use of our applications</li>
+           </ul>
+
+           <h2>11. Indemnification</h2>
+           <p>You agree to defend, indemnify, and hold harmless the Company, its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including attorney's fees) arising from:</p>
+           <ul>
+               <li>Your use of our applications</li>
+               <li>Your violation of these Terms</li>
+               <li>Your violation of any third-party rights</li>
+               <li>Any content you provide through our applications</li>
+           </ul>
+
+           <h2>12. Termination</h2>
+           <h3>12.1 Termination by You</h3>
+           <p>You may terminate your use of our applications at any time by deleting them from your device and discontinuing use.</p>
+           
+           <h3>12.2 Termination by Us</h3>
+           <p>We may terminate or suspend your access to our applications at any time, with or without cause, including if you violate these Terms.</p>
+           
+           <h3>12.3 Effect of Termination</h3>
+           <p>Upon termination, your right to use our applications ceases immediately. Provisions that by their nature should survive termination will continue to apply.</p>
+
+           <h2>13. Governing Law and Jurisdiction</h2>
+           <p>These Terms are governed by the laws of New Zealand. Any disputes arising from these Terms or your use of our applications shall be subject to the exclusive jurisdiction of the courts of New Zealand, specifically the Wellington District Court or High Court of New Zealand at Wellington.</p>
+
+           <h2>14. Changes to Terms</h2>
+           <p>We reserve the right to modify these Terms at any time. We will notify you of significant changes by:</p>
+           <ul>
+               <li>Updating the "Last Updated" date at the top of this document</li>
+               <li>Providing notice through our applications or website</li>
+               <li>Sending notification to your registered email address (if applicable)</li>
+           </ul>
+           <p>Your continued use of our applications after changes become effective constitutes acceptance of the modified Terms.</p>
+
+           <h2>15. Severability</h2>
+           <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+
+           <h2>16. Entire Agreement</h2>
+           <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding your use of our applications and supersede all prior agreements and understandings.</p>
+
+           <h2>17. Contact Information</h2>
+           <div class="contact-info">
+               <p><strong>Test Apps Limited</strong></p>
+               <p>Wellington, New Zealand</p>
+               <p>Email: <a href="mailto:hello@testapps.com">hello@testapps.com</a></p>
+               <p>Website: <a href="https://testapps.com">testapps.com</a></p>
+           </div>
+
+           <p><em>By using our applications, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</em></p>
+       </div>
+   </main>
+
+   <!-- Footer -->
+   <footer>
+       <div class="footer-content">
+           <div class="footer-left">
+               <div class="footer-brand">
+                   <div class="footer-logo">Test Apps</div>
+               </div>
+               <div class="footer-contact">
+                   hello@testapps.com<br><br>
+                   Created with <i class="fas fa-heart"></i> in Pōneke, Aotearoa<br>
+                   Wellington, New Zealand
+               </div>
+               <div class="footer-links">
+                   <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+           </div>
+           <div class="footer-right">
+               <div class="footer-links-right">
+                   <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                   <a href="terms.html" class="footer-link">Terms of Service</a>
+                   <a href="#" class="footer-link">Accessibility Statement</a>
+               </div>
+               <div class="footer-copyright">
+                   © 2025 by Test Apps Limited.
+               </div>
+           </div>
+       </div>
+   </footer>
+</body>
+</html>
