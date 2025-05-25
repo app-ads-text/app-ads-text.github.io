@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Accessibility Statement | Test Apps</title>
+   <!-- Favicon -->
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+   <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <!-- Google Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <style>
+       /* Base styles */
+       :root {
+           --primary-bg: #fafafa;
+           --secondary-bg: #f0f0f0;
+           --heading-color: #2c2c2c;
+           --text-color: #555555;
+           --accent-color: #28a745;
+           --section-bg: rgba(255, 255, 255, 0.9);
+           --section-radius: 8px;
+           --shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+           --border-color: #e8e8e8;
+           --highlight-bg: #f8fff9;
+       }
+       
+       * {
+           box-sizing: border-box;
+           margin: 0;
+           padding: 0;
+       }
+       
+       body {
+           font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+           margin: 0;
+           padding: 0;
+           background-color: var(--primary-bg);
+           color: var(--text-color);
+           line-height: 1.7;
+           font-size: 16px;
+       }
+       
+       /* Header */
+       .header {
+           background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+           color: white;
+           padding: 80px 20px;
+           text-align: center;
+           position: relative;
+           overflow: hidden;
+       }
+       
+       .header::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="0%" r="100%"><stop offset="0%" stop-color="white" stop-opacity="0.1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><rect width="100" height="20" fill="url(%23a)"/></svg>');
+           opacity: 0.3;
+       }
+       
+       .header-content {
+           position: relative;
+           z-index: 2;
+           max-width: 800px;
+           margin: 0 auto;
+       }
+       
+       .header-subtitle {
+           font-size: 16px;
+           font-weight: 400;
+           margin-bottom: 15px;
+           opacity: 0.9;
+           letter-spacing: 1px;
+       }
+       
+       .header-title {
+           font-family: 'DM Serif Display', serif;
+           font-size: 48px;
+           font-weight: 400;
+           margin-bottom: 20px;
+           line-height: 1.2;
+       }
+       
+       .header-description {
+           font-size: 18px;
+           opacity: 0.9;
+           max-width: 600px;
+           margin: 0 auto;
+       }
+       
+       /* Main content */
+       .main-content {
+           max-width: 900px;
+           margin: 0 auto;
+           padding: 60px 20px;
+       }
+       
+       .content-card {
+           background-color: var(--section-bg);
+           border-radius: var(--section-radius);
+           box-shadow: var(--shadow);
+           padding: 50px;
+           margin-bottom: 30px;
+           border: 1px solid var(--border-color);
+       }
+       
+       /* Typography */
+       h1 {
+           font-family: 'DM Serif Display', serif;
+           font-size: 36px;
+           color: var(--heading-color);
+           margin-bottom: 30px;
+           text-align: center;
+       }
+       
+       h2 {
+           font-family: 'DM Serif Display', serif;
+           font-size: 28px;
+           color: var(--heading-color);
+           margin: 40px 0 20px 0;
+           padding-bottom: 10px;
+           border-bottom: 2px solid #f0f0f0;
+       }
+       
+       h3 {
+           font-family: 'Outfit', sans-serif;
+           font-size: 20px;
+           font-weight: 600;
+           color: var(--heading-color);
+           margin: 30px 0 15px 0;
+       }
+       
+       p {
+           margin-bottom: 18px;
+           font-size: 16px;
+           line-height: 1.7;
+       }
+       
+       /* Lists */
+       ul, ol {
+           margin: 20px 0;
+           padding-left: 30px;
+       }
+       
+       li {
+           margin-bottom: 12px;
+           line-height: 1.6;
+       }
+       
+       /* Links */
+       a {
+           color: var(--accent-color);
+           text-decoration: none;
+           transition: color 0.3s ease;
+       }
+       
+       a:hover {
+           color: #1e7e34;
+           text-decoration: underline;
+       }
+       
+       /* Special content boxes */
+       .commitment-box {
+           background: linear-gradient(135deg, var(--highlight-bg) 0%, #e8f5e8 100%);
+           color: #155724;
+           padding: 25px;
+           border-radius: var(--section-radius);
+           margin: 30px 0;
+           border-left: 5px solid var(--accent-color);
+       }
+       
+       .feature-highlight {
+           background: var(--highlight-bg);
+           border: 1px solid #c3e6cb;
+           border-radius: var(--section-radius);
+           padding: 25px;
+           margin: 25px 0;
+           border-left: 5px solid var(--accent-color);
+       }
+       
+       .contact-info {
+           background: linear-gradient(135deg, #e8f4f8 0%, #f1f8ff 100%);
+           padding: 25px;
+           border-radius: var(--section-radius);
+           margin: 30px 0;
+           text-align: center;
+           border: 1px solid #bee5eb;
+       }
+       
+       /* Footer */
+       footer {
+           background-color: #f0f0f0;
+           border-top: 1px solid #e0e0e0;
+           padding: 40px 20px;
+           margin-top: 60px;
+       }
+       
+       .footer-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           display: grid;
+           grid-template-columns: 1fr;
+       }
+       
+       @media (min-width: 768px) {
+           .footer-content {
+               grid-template-columns: 1fr 1fr;
+           }
+       }
+       
+       .footer-brand {
+           margin-bottom: 20px;
+       }
+       
+       .footer-logo {
+           font-family: 'DM Serif Display', serif;
+           font-size: 24px;
+           margin-bottom: 10px;
+           color: var(--heading-color);
+       }
+       
+       .footer-contact {
+           margin-bottom: 20px;
+           font-size: 14px;
+           line-height: 1.8;
+       }
+       
+       .footer-links {
+           display: flex;
+           gap: 15px;
+       }
+       
+       .footer-social-icon {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 36px;
+           height: 36px;
+           background-color: var(--heading-color);
+           color: white;
+           border-radius: 50%;
+           transition: all 0.3s;
+       }
+       
+       .footer-social-icon:hover {
+           background-color: var(--accent-color);
+           transform: translateY(-3px);
+       }
+       
+       .footer-right {
+           display: flex;
+           flex-direction: column;
+           align-items: flex-end;
+           justify-content: space-between;
+       }
+       
+       .footer-links-right {
+           text-align: right;
+       }
+       
+       .footer-link {
+           display: block;
+           margin-bottom: 8px;
+           color: var(--heading-color);
+           text-decoration: none;
+           font-size: 14px;
+           transition: color 0.3s;
+       }
+       
+       .footer-link:hover {
+           color: var(--accent-color);
+       }
+       
+       .footer-copyright {
+           margin-top: 20px;
+           font-size: 13px;
+           color: #777;
+       }
+       
+       /* Responsive */
+       @media (max-width: 768px) {
+           .header-title {
+               font-size: 36px;
+           }
+           
+           .content-card {
+               padding: 30px 25px;
+           }
+           
+           .main-content {
+               padding: 40px 15px;
+           }
+           
+           .footer-right {
+               align-items: flex-start;
+               margin-top: 30px;
+           }
+           
+           .footer-links-right {
+               text-align: left;
+           }
+       }
+   </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+       <div class="header-content">
+           <div class="header-subtitle">Digital Inclusion</div>
+           <h1 class="header-title">Accessibility Statement</h1>
+           <p class="header-description">Making our applications accessible to everyone</p>
+       </div>
+   </header>
+
+   <!-- Main Content -->
+   <main class="main-content">
+       <div class="content-card">
+           <p><strong>Last Updated:</strong> May 25, 2025</p>
+
+           <div class="commitment-box">
+               <p><strong>Our Commitment:</strong> Test Apps Limited is committed to making our applications accessible to all users, including those with disabilities. We strive to create inclusive experiences that everyone can use comfortably and effectively.</p>
+           </div>
+
+           <section>
+               <h2>Accessibility Features</h2>
+               <p>Our applications are designed with accessibility in mind and include the following features:</p>
+
+               <h3>Visual Accessibility</h3>
+               <ul>
+                   <li><strong>High Contrast Support:</strong> Our apps work seamlessly with iOS high contrast settings</li>
+                   <li><strong>Color-Blind Friendly:</strong> We avoid relying solely on color to convey information</li>
+                   <li><strong>Clear Typography:</strong> Large, readable fonts with appropriate spacing</li>
+                   <li><strong>Scalable Text:</strong> Full support for iOS Dynamic Type and text scaling</li>
+                   <li><strong>Logical Layout:</strong> Intuitive navigation and consistent interface design</li>
+               </ul>
+
+               <h3>Motor and Touch Accessibility</h3>
+               <ul>
+                   <li><strong>Large Touch Targets:</strong> Buttons and interactive elements meet minimum size requirements</li>
+                   <li><strong>Alternative Input:</strong> Compatible with iOS Switch Control and AssistiveTouch</li>
+                   <li><strong>Gesture Alternatives:</strong> Standard tap interactions don't require complex gestures</li>
+               </ul>
+
+               <h3>Cognitive Accessibility</h3>
+               <ul>
+                   <li><strong>Clear Instructions:</strong> Simple, straightforward language and guidance</li>
+                   <li><strong>Progress Indicators:</strong> Clear feedback on test progress and completion</li>
+                   <li><strong>Consistent Navigation:</strong> Standard iOS navigation patterns throughout</li>
+                   <li><strong>Error Prevention:</strong> Clear validation and helpful error messages</li>
+               </ul>
+           </section>
+
+           <section>
+               <h2>iOS Accessibility Integration</h2>
+               <p>Our applications are designed to work with built-in iOS accessibility features:</p>
+
+               <div class="feature-highlight">
+                   <h3>Recommended iOS Accessibility Features</h3>
+                   <ul>
+                       <li><strong>VoiceOver:</strong> Full screen reader support for all app content</li>
+                       <li><strong>Voice Control:</strong> Navigate and interact using voice commands</li>
+                       <li><strong>Switch Control:</strong> Use external switches or adaptive hardware</li>
+                       <li><strong>Dynamic Type:</strong> Adjust text size system-wide for better readability</li>
+                       <li><strong>Reduce Motion:</strong> Minimize animations and transitions</li>
+                       <li><strong>High Contrast:</strong> Enhance color contrast for better visibility</li>
+                       <li><strong>Bold Text:</strong> Make text more prominent and easier to read</li>
+                       <li><strong>Button Shapes:</strong> Add visual indicators to interactive elements</li>
+                   </ul>
+               </div>
+
+               <p>To access these features, go to <strong>Settings > Accessibility</strong> on your iOS device.</p>
+           </section>
+
+           <section>
+               <h2>Ongoing Improvements</h2>
+               <p>We continuously work to improve the accessibility of our applications:</p>
+               <ul>
+                   <li>Regular testing with iOS accessibility features</li>
+                   <li>Following Apple's accessibility guidelines for app development</li>
+                   <li>Incorporating user feedback to identify and address accessibility barriers</li>
+                   <li>Staying updated with the latest accessibility standards and best practices</li>
+               </ul>
+           </section>
+
+           <section>
+               <h2>Feedback and Support</h2>
+               <p>If you encounter any accessibility barriers while using our applications, or if you have suggestions for improvement, please let us know. Your feedback helps us make our apps better for everyone.</p>
+
+               <div class="contact-info">
+                   <h3>Get in Touch</h3>
+                   <p><strong>Email:</strong> <a href="mailto:hello@testapps.com">hello@testapps.com</a></p>
+                   <p><strong>Subject:</strong> Please include "Accessibility" in your subject line</p>
+                   <p>We aim to respond to accessibility-related inquiries within 3 business days.</p>
+               </div>
+
+               <h3>What to Include</h3>
+               <p>When reporting an accessibility issue, please include:</p>
+               <ul>
+                   <li>Which app you were using</li>
+                   <li>Your iOS version and device model</li>
+                   <li>Which accessibility features you have enabled</li>
+                   <li>A description of the issue you encountered</li>
+                   <li>Any steps that might help us reproduce the problem</li>
+               </ul>
+           </section>
+
+           <section>
+               <h2>Additional Resources</h2>
+               <p>For more information about iOS accessibility features:</p>
+               <ul>
+                   <li><a href="https://www.apple.com/accessibility/" target="_blank">Apple Accessibility</a></li>
+                   <li><a href="https://support.apple.com/accessibility/" target="_blank">Apple Accessibility Support</a></li>
+                   <li><a href="https://developer.apple.com/accessibility/" target="_blank">iOS Accessibility Guidelines</a></li>
+               </ul>
+           </section>
+
+           <p><em>This statement reflects our ongoing commitment to accessibility. We welcome your feedback and will continue to improve our applications to ensure they remain accessible to all users.</em></p>
+       </div>
+   </main>
+
+   <!-- Footer -->
+   <footer>
+       <div class="footer-content">
+           <div class="footer-left">
+               <div class="footer-brand">
+                   <div class="footer-logo">Test Apps</div>
+               </div>
+               <div class="footer-contact">
+                   hello@testapps.com<br><br>
+                   Created with <i class="fas fa-heart"></i> in Pōneke, Aotearoa<br>
+                   Wellington, New Zealand
+               </div>
+               <div class="footer-links">
+                   <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                   <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+               </div>
+           </div>
+           <div class="footer-right">
+               <div class="footer-links-right">
+                   <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                   <a href="terms.html" class="footer-link">Terms of Service</a>
+                   <a href="accessibility.html" class="footer-link">Accessibility Statement</a>
+               </div>
+               <div class="footer-copyright">
+                   © 2025 by Test Apps Limited.
+               </div>
+           </div>
+       </div>
+   </footer>
+</body>
+</html>
