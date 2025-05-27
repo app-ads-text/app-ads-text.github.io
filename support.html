@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - Test Apps</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        :root {
+            --primary-bg: #f5f5f5;
+            --secondary-bg: #e5e5e5;
+            --heading-color: #333333;
+            --text-color: #444444;
+            --accent-color: #666666;
+            --section-bg: rgba(255, 255, 255, 0.7);
+            --section-radius: 0px;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header styles */
+        .header {
+            background-color: var(--primary-bg);
+            padding: 20px 5%;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--heading-color);
+            text-decoration: none;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--heading-color);
+        }
+        
+        /* Main content */
+        .main-content {
+            padding: 60px 5% 0;
+        }
+        
+        /* Section styles */
+        .section {
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: var(--section-bg);
+            padding: 60px 40px;
+            position: relative;
+        }
+        
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--heading-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        /* Contact methods grid */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 48px;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-card p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .contact-link {
+            color: var(--heading-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .contact-link:hover {
+            color: #000;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: transparent;
+            border: none;
+            padding: 25px 30px;
+            width: 100%;
+            text-align: left;
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--heading-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            font-size: 16px;
+            line-height: 1.7;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Contact form styles */
+        .contact-form {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--heading-color);
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .form-input, 
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus, 
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--heading-color);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--heading-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 40px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: #000;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #f0f0f0;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .footer-brand {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+        
+        .footer-contact {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--heading-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .footer-social-icon:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        
+        .footer-links-right {
+            text-align: right;
+        }
+        
+        .footer-link {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--heading-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover {
+            color: #000;
+        }
+        
+        .footer-copyright {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .section-inner {
+                padding: 40px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-right {
+                align-items: flex-start;
+                margin-top: 30px;
+            }
+            
+            .footer-links-right {
+                text-align: left;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">Test Apps</a>
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Contact & Support</h1>
+            <p class="page-subtitle">We're here to help! Whether you have questions about our apps, need technical support, or want to share feedback, we'd love to hear from you.</p>
+        </div>
+
+        <!-- Contact Methods Section -->
+        <section class="section">
+            <div class="section-inner">
+                <h2>Get In Touch</h2>
+                <div class="contact-methods">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>For general inquiries, app support, or feedback</p>
+                        <a href="mailto:hello@testappsco.com" class="contact-link">hello@testappsco.com</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Bug Reports</h3>
+                        <p>Found a bug or technical issue with one of our apps?</p>
+                        <a href="mailto:hello@testappsco.com?subject=Bug Report" class="contact-link">Report a Bug</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Feature Requests</h3>
+                        <p>Have an idea for a new feature or improvement?</p>
+                        <a href="mailto:hello@testappsco.com?subject=Feature Request" class="contact-link">Share Your Ideas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="section">
+            <div class="section-inner">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form" action="mailto:hello@testappsco.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="app" class="form-label">Which App? (Optional)</label>
+                        <select id="app" name="app" class="form-select">
+                            <option value="">Select an app...</option>
+                            <option value="Love Language Test & Quiz">Love Language Test & Quiz</option>
+                            <option value="Compatibility Test & Love Quiz">Compatibility Test & Love Quiz</option>
+                            <option value="Autism Test App">Autism Test App - Symptom Quiz</option>
+                            <option value="Depression Test">Depression Test - Symptom Quiz</option>
+                            <option value="Anxiety Test">Anxiety Test: GAD-7 Assessment</option>
+                            <option value="Personality Test">Personality Test: Big Five</option>
+                            <option value="ADHD Test">ADHD Test - Symptom Assessment</option>
+                            <option value="IQ Test - Real IQ Quiz">IQ Test - Real IQ Quiz</option>
+                            <option value="IQ Test - Full Cognitive Test">IQ Test - Full Cognitive Test</option>
+                            <option value="IQ Test - Full Aptitude Test">IQ Test - Full Aptitude Test</option>
+                            <option value="Fuzzy Fish">Fuzzy Fish</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiry-type" class="form-label">Type of Inquiry</label>
+                        <select id="inquiry-type" name="inquiry-type" class="form-select">
+                            <option value="General Question">General Question</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Feature Request">Feature Request</option>
+                            <option value="Privacy Concern">Privacy Concern</option>
+                            <option value="Business Inquiry">Business Inquiry</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Please provide as much detail as possible..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section">
+            <div class="section-inner">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I get help with a specific app?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For app-specific help, please email us at hello@testappsco.com with the app name in the subject line. Include details about your device, iOS version, and the specific issue you're experiencing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are the test results in your apps medically accurate?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our apps are designed for educational and self-assessment purposes only. While we use established psychological frameworks and assessment tools, our apps are not diagnostic tools and should not replace professional medical or psychological consultation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do you protect my privacy and data?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We take privacy seriously. Most of our apps process data locally on your device. For detailed information about our data practices, please review our Privacy Policy. If you have specific privacy concerns, don't hesitate to contact us.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I request a refund for an app purchase?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Refunds are handled through Apple's App Store policies. You can request a refund directly through your Apple ID account or contact Apple Support. If you're experiencing technical issues, please reach out to us first as we may be able to help resolve the problem.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How quickly will you respond to my message?
+                            <i class="fas fa-chevron-down faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We aim to respond to all inquiries within 24-48 hours during business days (Monday-Friday, New Zealand time). For urgent technical issues, please mark your email as "Urgent" in the subject line.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <div class="footer-logo">Test Apps</div>
+                </div>
+                <div class="footer-contact">
+                    +64 4 123 4567<br>
+                    hello@testappsco.com<br><br>
+                    Created with <i class="fas fa-heart"></i> in Pōneke, Aotearoa<br>
+                    Wellington, New Zealand
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links-right">
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms of Service</a>
+                    <a href="accessibility.html" class="footer-link">Accessibility Statement</a>
+                </div>
+                <div class="footer-copyright">
+                    © 2025 by Test Apps Limited.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        q.nextElementSibling.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        this.classList.add('active');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
