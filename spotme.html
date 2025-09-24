@@ -1,306 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Braindrop-style Landing — Your App</title>
-  <meta name="description" content="Offload thoughts. Get early access to the Mac app."/>
-  <!-- Google font (optional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1:#0f172a; /* deep navy */
-      --bg2:#0b1220;
-      --accent:#7c5cff;
-      --muted: #94a3b8;
-      --card: rgba(255,255,255,0.03);
-      --glass: rgba(255,255,255,0.04);
-      --maxwidth: 1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:48px 20px;
-      line-height:1.4;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SpotMe" />
+    <meta property="og:title" content="SpotMe">
+    <meta property="og:description" content="Split expenses effortlessly. Request payments and transfer money instantly between friends.">
+    <meta property="og:image" content="/assets/images/opengraph.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://spotme.app">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=2025-05-21">
+    <link rel="stylesheet" href="https://use.typekit.net/eol3uke.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>SpotMe - Split expenses effortlessly</title>
+    <!-- Fathom - beautiful, simple website analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="ALKPROCX" defer></script>
+    <!-- / Fathom -->
+  </head>
+  <body class="home">
+    <div class="body-wrapper">
+      
 
-    .container{
-      width:100%;
-      max-width:var(--maxwidth);
-      display:grid;
-      grid-template-columns: 1fr 460px;
-      gap:36px;
-      align-items:center;
-    }
+  
+<header>
+  <nav class="wrapper-full">
+    <div class="header">
+      <img src="/assets/images/logo.svg" alt="SpotMe logo" class="header__logo">
+    </div>
+  </nav>
+</header>
 
-    @media (max-width:900px){
-      .container{grid-template-columns:1fr; padding:0;}
-    }
-
-    .hero{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:20px;
-      padding:40px;
-      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-      backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,0.03);
-    }
-
-    .kicker{
-      display:inline-block;
-      font-weight:600;
-      letter-spacing:0.6px;
-      color:var(--accent);
-      background: linear-gradient(90deg, rgba(124,92,255,0.12), rgba(124,92,255,0.06));
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
-      margin-bottom:18px;
-    }
-
-    h1{
-      font-size:42px;
-      margin:0 0 12px 0;
-      line-height:1.03;
-      letter-spacing:-0.02em;
-      font-weight:700;
-    }
-
-    p.lead{
-      margin:0 0 22px 0;
-      color:var(--muted);
-      max-width:66%;
-    }
-
-    .email-row{
-      display:flex;
-      gap:10px;
-      margin-top:18px;
-      flex-wrap:wrap;
-    }
-
-    input[type="email"]{
-      flex:1;
-      min-width:0;
-      padding:14px 16px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.06);
-      background:transparent;
-      color:inherit;
-      outline:none;
-      font-size:15px;
-    }
-
-    button.cta{
-      background:linear-gradient(90deg,var(--accent), #5db3ff 120%);
-      border:none;
-      color:#051124;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      box-shadow: 0 6px 18px rgba(124,92,255,0.18);
-      transition:transform .12s ease, opacity .12s;
-    }
-    button.cta:active{ transform:translateY(1px) }
-    button.cta[aria-busy="true"]{opacity:0.7; cursor:progress}
-
-    .meta{
-      margin-top:14px;
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .side-card{
-      border-radius:18px;
-      padding:28px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:18px;
-    }
-
-    .illustration{
-      width:100%;
-      height:260px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      overflow:hidden;
-    }
-
-    /* placeholder illustration styling */
-    .illu-svg{ max-width:100%; height:100%; }
-
-    .brand-row{
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:8px;
-      color:var(--muted);
-      font-size:13px;
-      opacity:0.95;
-    }
-
-    .socials{ display:flex; gap:12px; align-items:center;}
-    .socials a{ color:var(--muted); text-decoration:none; font-weight:600; font-size:13px; opacity:0.95; }
-
-    footer.copy{
-      margin-top:16px;
-      font-size:13px;
-      color:var(--muted);
-      text-align:center;
-      opacity:0.9;
-    }
-
-    /* small touches */
-    .small-note{ font-size:13px; color:var(--muted); max-width:420px;}
-    .logo{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    .logo .dot{
-      width:36px;height:36px;border-radius:10px;background:linear-gradient(90deg,var(--accent), #5db3ff);display:inline-block;
-      box-shadow:0 6px 18px rgba(124,92,255,0.14);
-    }
-
-  </style>
-</head>
-<body>
-  <main class="container" role="main">
-    <!-- LEFT / HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <span class="kicker">Get early access</span>
-      <div style="display:flex;align-items:center;gap:16px;margin-top:10px;">
-        <div class="logo" aria-hidden="true">
-          <span class="dot" title="logo"></span>
-        </div>
-        <div>
-          <h1 id="hero-heading">Clear your mind. Capture ideas fast.</h1>
-          <p class="lead">Offload quick thoughts, surface what matters, and come back to the present. Join the waitlist for the Mac app.</p>
-        </div>
-      </div>
-
-      <form id="emailForm" class="email-row" onsubmit="return handleSubmit(event)" aria-label="Join waitlist">
-        <label for="email" class="sr-only" style="position:absolute;left:-9999px;top:auto;">Email address</label>
-        <input id="email" name="email" type="email" placeholder="Email address" required aria-required="true" />
-        <button type="submit" class="cta" id="submitBtn" aria-busy="false">Notify me</button>
-      </form>
-
-      <div class="meta" id="formStatus" role="status" aria-live="polite"></div>
-
-      <p class="small-note" style="margin-top:18px;">
-        This is a front-end mock. Replace the form handler with your API or mailing-list provider (Mailchimp, ConvertKit, Supabase, etc.).
+<main>
+  <div class="wrapper-regular py-m">
+    <div class="intro">
+      <h1>Split expenses effortlessly.</h1>
+      <p>
+        <span>Request payments and transfer money instantly.</span>
+        <span>Never chase friends for money&nbsp;again.</span>
       </p>
-    </section>
+    </div>
 
-    <!-- RIGHT / SIDE CARD -->
-    <aside class="side-card" aria-label="Illustration and links">
-      <div class="illustration" aria-hidden="true">
-        <!-- Simple illustrative SVG placeholder: replace with your own art -->
-        <svg class="illu-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1">
-              <stop offset="0" stop-color="#7c5cff" stop-opacity="0.95"/>
-              <stop offset="1" stop-color="#5db3ff" stop-opacity="0.9"/>
-            </linearGradient>
-          </defs>
-          <rect width="100%" height="100%" rx="12" fill="url(#g1)" opacity="0.12"/>
-          <g transform="translate(70,60)">
-            <rect x="10" y="40" width="360" height="230" rx="16" fill="rgba(255,255,255,0.04)"/>
-            <circle cx="110" cy="160" r="34" fill="rgba(255,255,255,0.06)"/>
-            <rect x="200" y="80" width="140" height="12" rx="6" fill="rgba(255,255,255,0.06)"/>
-            <rect x="200" y="106" width="120" height="12" rx="6" fill="rgba(255,255,255,0.03)"/>
-            <rect x="200" y="132" width="80" height="12" rx="6" fill="rgba(255,255,255,0.03)"/>
-          </g>
-          <g transform="translate(470,80)">
-            <rect x="0" y="0" width="220" height="160" rx="16" fill="rgba(255,255,255,0.02)"/>
-            <rect x="16" y="18" width="190" height="18" rx="9" fill="rgba(255,255,255,0.04)"/>
-            <rect x="16" y="46" width="110" height="12" rx="6" fill="rgba(255,255,255,0.03)"/>
-            <circle cx="40" cy="120" r="22" fill="rgba(255,255,255,0.05)"/>
-          </g>
-        </svg>
+    <form id="early-access-form" action="https://tally.so/r/nrWkZv" method="GET" aria-labelledby="early-access-heading">
+      <h2 id="early-access-heading">
+        Get early access to the app <span class="u-show-medium">(coming&nbsp;soon)</span>
+      </h2>
+      <div>
+        <label for="email" class="visually-hidden">Email address</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          placeholder="Your email address" 
+          required 
+          aria-required="true" 
+        />
+        <button type="submit" class="button">Notify&nbsp;me</button>
       </div>
+    </form>
+  </div>
+  <div class="illustration">
+    <picture>
+      <!-- For large screens -->
+      <source media="(min-width: 600px)" srcset="/assets/images/illustration-wide.png">
+      <!-- Fallback/default image for small screens -->
+      <img src="/assets/images/illustration-narrow.png" alt="Illustration showing friends sharing expenses - people at a dinner table, someone paying for groceries, and friends splitting the bill on their phones.">
+    </picture>
+  </div>
+</main>
 
-      <div class="brand-row" style="width:100%;">
-        <div style="display:flex;flex-direction:column;">
-          <strong style="font-size:15px">A small app by Better Than Good</strong>
-          <span style="font-size:13px;color:var(--muted)">Handmade &amp; simple</span>
-        </div>
-        <div class="socials" aria-hidden="true">
-          <!-- Replace hrefs with real links -->
-          <a href="#" title="Mastodon">Mastodon</a>
-          <a href="#" title="X">X</a>
-          <a href="#" title="Bluesky">Bluesky</a>
-        </div>
-      </div>
+<footer>
+  <div class="footer__curve"></div>
+  <div class="footer__content">
+    <div class="footer__left">
+      <p class="btg">
+        <a class="btg__logo" href="#">SpotMe</a> Built for students and young professionals.
+      </p>
+      <p>
+        &copy; Copyright 2025.
+      </p>
+    </div>
+    <div class="footer__right">
+      <ul class="social-links">
+        <li class="social-link social-link--mastodon"><a href="#">Contact</a></li>
+        <li class="social-link social-link--x"><a href="#">Privacy</a></li>
+        <li class="social-link social-link--bluesky"><a href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
-      <footer class="copy">© Copyright <span id="year"></span></footer>
-    </aside>
-  </main>
 
-  <script>
-    // small, dependency-free form handler mock
-    const form = document.getElementById('emailForm');
-    const emailInput = document.getElementById('email');
-    const submitBtn = document.getElementById('submitBtn');
-    const status = document.getElementById('formStatus');
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function handleSubmit(e){
-      e.preventDefault();
-      const email = emailInput.value.trim();
-      if(!email) return;
-
-      submitBtn.setAttribute('aria-busy','true');
-      submitBtn.disabled = true;
-      status.textContent = 'Joining the waitlist...';
-
-      // Simulate a network request. Replace with fetch() to your API endpoint.
-      setTimeout(() => {
-        // Successful mock result
-        submitBtn.setAttribute('aria-busy','false');
-        submitBtn.disabled = false;
-        status.textContent = 'Thanks — check your inbox for confirmation!';
-        emailInput.value = '';
-      }, 900);
-
-      return false;
-    }
-
-    // Accessibility: simple keyboard focus for CTA (optional)
-    submitBtn.addEventListener('keydown', (ev) => {
-      if(ev.key === 'Enter' || ev.key === ' ') {
-        ev.preventDefault();
-        submitBtn.click();
-      }
-    });
-
-    // Helpful: function to wire into a real API
-    /* Example:
-      function submitToBackend(email) {
-        return fetch('/api/waitlist', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify({email})
-        }).then(r => r.json());
-      }
-    */
-  </script>
-</body>
+    </div>
+  </body>
 </html>
