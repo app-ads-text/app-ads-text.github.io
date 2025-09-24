@@ -15,21 +15,295 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://braindrop.app">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=2025-05-21">
-    <link rel="stylesheet" href="https://use.typekit.net/eol3uke.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Braindrop, a better than good app for Mac.</title>
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fafafa;
+      }
+
+      .body-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        padding: 2rem 0;
+        background: white;
+      }
+
+      .wrapper-full,
+      .wrapper-regular {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+      }
+
+      .header__logo {
+        height: 40px;
+      }
+
+      main {
+        flex: 1;
+        background: white;
+      }
+
+      .py-m {
+        padding: 4rem 0;
+      }
+
+      .intro {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .intro h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: #1a1a1a;
+      }
+
+      .intro p {
+        font-size: 1.5rem;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .intro p span {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      #early-access-form {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      #early-access-form h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .u-show-medium {
+        color: #888;
+        font-weight: 400;
+      }
+
+      #early-access-form > div {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      input[type="email"] {
+        flex: 1;
+        padding: 16px 20px;
+        border: 2px solid #e0e0e0;
+        border-right: none;
+        border-radius: 12px 0 0 12px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: white;
+      }
+
+      input[type="email"]:focus {
+        outline: none;
+        border-color: #333;
+      }
+
+      .button {
+        padding: 16px 32px;
+        background: #333;
+        color: white;
+        border: 2px solid #333;
+        border-radius: 0 12px 12px 0;
+        font-size: 1rem;
+        font-family: inherit;
+        cursor: pointer;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      .button:hover {
+        background: #555;
+        border-color: #555;
+      }
+
+      .illustration {
+        margin: 4rem 0 0 0;
+        text-align: center;
+      }
+
+      .illustration img {
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+      }
+
+      footer {
+        background: #2a2a2a;
+        color: white;
+        position: relative;
+        margin-top: auto;
+      }
+
+      .footer__curve {
+        height: 60px;
+        background: white;
+        position: relative;
+      }
+
+      .footer__curve::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2a2a2a;
+        border-radius: 100% 100% 0 0 / 60px 60px 0 0;
+      }
+
+      .footer__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer__left p {
+        margin-bottom: 0.5rem;
+      }
+
+      .btg {
+        font-size: 1rem;
+        color: #ccc;
+      }
+
+      .btg a {
+        color: #4a9eff;
+        text-decoration: none;
+      }
+
+      .btg a:hover {
+        text-decoration: underline;
+      }
+
+      .btg__logo {
+        font-weight: 600;
+      }
+
+      .social-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .social-links a {
+        color: #4a9eff;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      .social-links a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .intro h1 {
+          font-size: 2.5rem;
+        }
+        
+        .intro p {
+          font-size: 1.25rem;
+        }
+        
+        #early-access-form > div {
+          flex-direction: column;
+          max-width: 300px;
+        }
+        
+        input[type="email"] {
+          border-radius: 12px;
+          border-right: 2px solid #e0e0e0;
+        }
+        
+        .button {
+          border-radius: 12px;
+          border: 2px solid #333;
+        }
+        
+        .footer__content {
+          flex-direction: column;
+          gap: 2rem;
+          text-align: center;
+        }
+        
+        .social-links {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .wrapper-regular {
+          padding: 0 1rem;
+        }
+        
+        .py-m {
+          padding: 2rem 0;
+        }
+        
+        .intro h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+
     <!-- Fathom - beautiful, simple website analytics -->
     <script src="https://cdn.usefathom.com/script.js" data-site="ALKPROCX" defer></script>
     <!-- / Fathom -->
   </head>
   <body class="home">
     <div class="body-wrapper">
-      
 
-  
 <header>
   <nav class="wrapper-full">
     <div class="header">
@@ -97,7 +371,6 @@
     </div>
   </div>
 </footer>
-
 
     </div>
   </body>
