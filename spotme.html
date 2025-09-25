@@ -8,17 +8,17 @@
     <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Braindrop" />
-    <meta property="og:title" content="Braindrop">
-    <meta property="og:description" content="Offload thoughts and stay present. Don't let a great idea get lost in the chaos.">
+    <meta name="apple-mobile-web-app-title" content="SpotMe" />
+    <meta property="og:title" content="SpotMe">
+    <meta property="og:description" content="Your go-to app for sharing and settling expenses—without the stress.">
     <meta property="og:image" content="/assets/images/opengraph.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://braindrop.app">
+    <meta property="og:url" content="https://spotme.app">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <title>Braindrop, a better than good app for Mac.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>SpotMe – Make Splitting Bills Simple and Friendly</title>
     
     <style>
       * {
@@ -28,10 +28,10 @@
       }
 
       body {
-        font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         line-height: 1.6;
-        color: #333;
-        background-color: #fafafa;
+        color: #185533;
+        background-color: #FFEFCB;
       }
 
       .body-wrapper {
@@ -42,7 +42,7 @@
 
       header {
         padding: 2rem 0;
-        background: white;
+        background: #FFEFCB;
       }
 
       .wrapper-full,
@@ -58,12 +58,12 @@
       }
 
       .header__logo {
-        height: 40px;
+        height: 50px;
       }
 
       main {
         flex: 1;
-        background: white;
+        background: #FFEFCB;
       }
 
       .py-m {
@@ -79,14 +79,15 @@
         font-size: 4rem;
         font-weight: 800;
         margin-bottom: 1.5rem;
-        color: #1a1a1a;
+        color: #185533;
       }
 
       .intro p {
         font-size: 1.5rem;
-        color: #666;
-        max-width: 600px;
+        color: #185533;
+        max-width: 700px;
         margin: 0 auto;
+        opacity: 0.8;
       }
 
       .intro p span {
@@ -94,21 +95,79 @@
         margin-bottom: 0.5rem;
       }
 
+      .features-section {
+        background: rgba(24, 85, 51, 0.05);
+        padding: 3rem 0;
+        margin: 3rem 0;
+        border-radius: 20px;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .feature {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #185533;
+        margin-bottom: 0.5rem;
+      }
+
+      .feature p {
+        color: #185533;
+        opacity: 0.8;
+      }
+
+      .community-section {
+        text-align: center;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: rgba(24, 85, 51, 0.08);
+        border-radius: 15px;
+      }
+
+      .community-section h2 {
+        font-size: 2rem;
+        color: #185533;
+        margin-bottom: 1rem;
+      }
+
+      .community-section p {
+        font-size: 1.1rem;
+        color: #185533;
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
       #early-access-form {
         text-align: center;
-        margin-bottom: 4rem;
+        margin: 4rem 0;
+        padding: 3rem 2rem;
+        background: rgba(24, 85, 51, 0.1);
+        border-radius: 20px;
       }
 
       #early-access-form h2 {
-        font-size: 1.75rem;
-        margin-bottom: 2rem;
-        color: #333;
-        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #185533;
+        font-weight: 700;
       }
 
-      .u-show-medium {
-        color: #888;
-        font-weight: 400;
+      .form-subtitle {
+        font-size: 1.1rem;
+        color: #185533;
+        opacity: 0.8;
+        margin-bottom: 2rem;
       }
 
       #early-access-form > div {
@@ -134,35 +193,43 @@
       input[type="email"] {
         flex: 1;
         padding: 16px 20px;
-        border: 2px solid #e0e0e0;
+        border: 2px solid #185533;
         border-right: none;
         border-radius: 12px 0 0 12px;
         font-size: 1rem;
         font-family: inherit;
-        background: white;
+        background: #FFEFCB;
+        color: #185533;
+      }
+
+      input[type="email"]::placeholder {
+        color: rgba(24, 85, 51, 0.6);
       }
 
       input[type="email"]:focus {
         outline: none;
-        border-color: #333;
+        border-color: #185533;
+        box-shadow: 0 0 0 3px rgba(24, 85, 51, 0.1);
       }
 
       .button {
         padding: 16px 32px;
-        background: #333;
-        color: white;
-        border: 2px solid #333;
+        background: #185533;
+        color: #FFEFCB;
+        border: 2px solid #185533;
         border-radius: 0 12px 12px 0;
         font-size: 1rem;
         font-family: inherit;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 600;
         white-space: nowrap;
+        transition: all 0.2s ease;
       }
 
       .button:hover {
-        background: #555;
-        border-color: #555;
+        background: rgba(24, 85, 51, 0.8);
+        border-color: rgba(24, 85, 51, 0.8);
+        transform: translateY(-1px);
       }
 
       .illustration {
@@ -172,20 +239,21 @@
 
       .illustration img {
         width: 100%;
-        max-width: 1200px;
+        max-width: 1000px;
         height: auto;
+        border-radius: 15px;
       }
 
       footer {
-        background: #2a2a2a;
-        color: white;
+        background: #185533;
+        color: #FFEFCB;
         position: relative;
         margin-top: auto;
       }
 
       .footer__curve {
         height: 60px;
-        background: white;
+        background: #FFEFCB;
         position: relative;
       }
 
@@ -196,55 +264,32 @@
         left: 0;
         width: 100%;
         height: 60px;
-        background: #2a2a2a;
+        background: #185533;
         border-radius: 100% 100% 0 0 / 60px 60px 0 0;
       }
 
       .footer__content {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 3rem 2rem;
         max-width: 1200px;
         margin: 0 auto;
       }
 
-      .footer__left p {
+      .footer__center {
+        text-align: center;
+      }
+
+      .footer__center p {
+        font-size: 1.1rem;
+        color: #FFEFCB;
         margin-bottom: 0.5rem;
       }
 
-      .btg {
-        font-size: 1rem;
-        color: #ccc;
-      }
-
-      .btg a {
-        color: #4a9eff;
-        text-decoration: none;
-      }
-
-      .btg a:hover {
-        text-decoration: underline;
-      }
-
-      .btg__logo {
-        font-weight: 600;
-      }
-
-      .social-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-
-      .social-links a {
-        color: #4a9eff;
-        text-decoration: none;
-        font-size: 1rem;
-      }
-
-      .social-links a:hover {
-        text-decoration: underline;
+      .footer__center .copyright {
+        font-size: 0.9rem;
+        opacity: 0.8;
       }
 
       @media (max-width: 768px) {
@@ -255,6 +300,10 @@
         .intro p {
           font-size: 1.25rem;
         }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
         
         #early-access-form > div {
           flex-direction: column;
@@ -263,22 +312,12 @@
         
         input[type="email"] {
           border-radius: 12px;
-          border-right: 2px solid #e0e0e0;
+          border-right: 2px solid #185533;
         }
         
         .button {
           border-radius: 12px;
-          border: 2px solid #333;
-        }
-        
-        .footer__content {
-          flex-direction: column;
-          gap: 2rem;
-          text-align: center;
-        }
-        
-        .social-links {
-          justify-content: center;
+          border: 2px solid #185533;
         }
       }
 
@@ -294,12 +333,15 @@
         .intro h1 {
           font-size: 2rem;
         }
+
+        .features-section,
+        .community-section,
+        #early-access-form {
+          margin: 2rem 0;
+          padding: 2rem 1rem;
+        }
       }
     </style>
-
-    <!-- Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="ALKPROCX" defer></script>
-    <!-- / Fathom -->
   </head>
   <body class="home">
     <div class="body-wrapper">
@@ -307,7 +349,7 @@
 <header>
   <nav class="wrapper-full">
     <div class="header">
-      <img src="/assets/images/logo.svg" alt="Braindrop logo" class="header__logo">
+      <img src="/assets/images/logoSpotMe.png" alt="SpotMe logo" class="header__logo">
     </div>
   </nav>
 </header>
@@ -315,17 +357,43 @@
 <main>
   <div class="wrapper-regular py-m">
     <div class="intro">
-      <h1>Clear your head.</h1>
+      <h1>Split Expenses.</h1>
       <p>
-        <span>Offload thoughts and stay present.</span>
-        <span>Don't&nbsp;let a great idea get lost in&nbsp;the&nbsp;chaos.</span>
+        <span>Your go-to app for sharing and settling expenses—without the stress.</span>
       </p>
     </div>
 
+    <div class="features-section">
+      <div class="wrapper-regular">
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Instant Splits</h3>
+            <p>Divide bills in seconds—no calculators needed.</p>
+          </div>
+          <div class="feature">
+            <h3>Payment Requests</h3>
+            <p>Send reminders with one tap.</p>
+          </div>
+          <div class="feature">
+            <h3>Real-Time Transfers</h3>
+            <p>Get paid back instantly to your account.</p>
+          </div>
+          <div class="feature">
+            <h3>Group Tracking</h3>
+            <p>Perfect for flats, trips, and events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="community-section">
+      <h2>Join the Community</h2>
+      <p>Built for Kiwi students, by people who get it. SpotMe is a safe, supportive alternative to awkward borrowing or messy group chats. Together, we're making splitting expenses stress-free across NZ.</p>
+    </div>
+
     <form id="early-access-form" action="https://tally.so/r/nrWkZv" method="GET" aria-labelledby="early-access-heading">
-      <h2 id="early-access-heading">
-        Get early access to the Mac app <span class="u-show-medium">(coming&nbsp;soon)</span>
-      </h2>
+      <h2 id="early-access-heading">Join the Waitlist & Get First Dibs on SpotMe</h2>
+      <p class="form-subtitle">Be part of our launch crew, test features early, and experience effortless money sharing before anyone else.</p>
       <div>
         <label for="email" class="visually-hidden">Email address</label>
         <input 
@@ -336,38 +404,21 @@
           required 
           aria-required="true" 
         />
-        <button type="submit" class="button">Notify&nbsp;me</button>
+        <button type="submit" class="button">Sign Up for Early Access</button>
       </div>
     </form>
   </div>
   <div class="illustration">
-    <picture>
-      <!-- For large screens -->
-      <source media="(min-width: 600px)" srcset="/assets/images/illustration-wide.png">
-      <!-- Fallback/default image for small screens -->
-      <img src="/assets/images/illustration-narrow.png" alt="Line illustration of a busy home office scene: a person works at a laptop, a dog interacts with a visitor holding paper, a person on a ladder hangs artwork, another carries stacked boxes through the doorway. Houseplants and scattered objects decorate the room.">
-    </picture>
+    <img src="/assets/images/spotMeArt.png" alt="SpotMe app illustration showing friends easily splitting expenses and sharing costs">
   </div>
 </main>
 
 <footer>
   <div class="footer__curve"></div>
   <div class="footer__content">
-    <div class="footer__left">
-      <p class="btg">
-        <a class="btg__logo" href="https://betterthangood.xyz/">Better than good</a> A <a href="https://betterthangood.xyz/">better than good</a> app.
-      </p>
-      <p>
-        &copy; Copyright 2025.
-      </p>
-    </div>
-    <div class="footer__right">
-      <ul class="social-links">
-        <li class="social-link social-link--mastodon"><a href="https://mastodon.social/@betterthangood">Mastodon</a></li>
-        <li class="social-link social-link--x"><a href="https://x.com/betterthangoodx">X</a></li>
-        <li class="social-link social-link--bluesky"><a href="https://bsky.app/profile/betterthangoodxyz.bsky.social">Bluesky</a></li>
-        <li class="social-link social-link--instagram"><a href="https://www.instagram.com/betterthangoodxyz">Instagram</a></li>
-      </ul>
+    <div class="footer__center">
+      <p>Made with ♥ in Wellington</p>
+      <p class="copyright">&copy; Copyright 2025 SpotMe.</p>
     </div>
   </div>
 </footer>
