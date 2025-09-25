@@ -41,7 +41,7 @@
       }
 
       header {
-        padding: 2rem 0;
+        padding: 1rem 0;
         background: #FFEFCB;
       }
 
@@ -154,6 +154,7 @@
         padding: 3rem 2rem;
         background: rgba(24, 85, 51, 0.1);
         border-radius: 20px;
+        transition: all 0.3s ease;
       }
 
       #early-access-form h2 {
@@ -200,6 +201,7 @@
         font-family: inherit;
         background: #FFEFCB;
         color: #185533;
+        transition: all 0.3s ease;
       }
 
       input[type="email"]::placeholder {
@@ -227,13 +229,17 @@
         cursor: pointer;
         font-weight: 600;
         white-space: nowrap;
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
       }
 
-      .button:hover {
+      .button:hover:not(:disabled) {
         background: rgba(24, 85, 51, 0.8);
         border-color: rgba(24, 85, 51, 0.8);
         transform: translateY(-1px);
+      }
+
+      .button:disabled {
+        cursor: not-allowed;
       }
 
       footer {
@@ -366,6 +372,46 @@
           return true;
         }
       }
+
+      function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        if (validateEmail()) {
+          const form = document.getElementById('early-access-form');
+          const button = form.querySelector('.button');
+          const emailInput = document.getElementById('email');
+          
+          // Add success animation
+          form.style.transition = 'all 0.6s ease';
+          form.style.transform = 'scale(1.02)';
+          form.style.background = 'rgba(76, 175, 80, 0.1)';
+          form.style.borderRadius = '20px';
+          
+          // Change button text and style
+          button.textContent = '✓ Added to Waitlist!';
+          button.style.background = '#4CAF50';
+          button.style.borderColor = '#4CAF50';
+          button.disabled = true;
+          
+          // Disable input
+          emailInput.disabled = true;
+          emailInput.style.background = '#f5f5f5';
+          
+          // Reset after 3 seconds (optional)
+          setTimeout(() => {
+            form.style.transform = 'scale(1)';
+          }, 300);
+          
+          // Here you would normally send the email to your backend
+          console.log('Email submitted:', emailInput.value);
+        }
+      }
+
+      // Add event listener when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('early-access-form');
+        form.addEventListener('submit', handleFormSubmit);
+      });
     </script>
   </head>
   <body class="home">
@@ -416,7 +462,7 @@
       <p>Built for Kiwi students, by people who get it. SpotMe is a safe, supportive alternative to awkward borrowing or messy group chats. Together, we're making splitting expenses stress-free across NZ.</p>
     </div>
 
-    <form id="early-access-form" onsubmit="return validateEmail()" aria-labelledby="early-access-heading">
+    <form id="early-access-form" aria-labelledby="early-access-heading">
       <h2 id="early-access-heading">Join the Waitlist & Get First Dibs on SpotMe</h2>
       <p class="form-subtitle">Be part of our launch crew, test features early, and experience effortless money sharing before anyone else.</p>
       <div>
