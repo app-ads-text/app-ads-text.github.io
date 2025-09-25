@@ -58,7 +58,7 @@
       }
 
       .header__logo {
-        height: 150px;
+        height: 80px; /* Adjusted height */
       }
 
       main {
@@ -72,7 +72,7 @@
 
       .intro {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem; /* Adjusted margin */
       }
 
       .intro h1 {
@@ -112,6 +112,12 @@
       .feature {
         text-align: center;
         padding: 1.5rem;
+      }
+
+      .feature__image { /* New style for images */
+        max-width: 100px; /* Adjust as needed */
+        height: auto;
+        margin-bottom: 1rem;
       }
 
       .feature h3 {
@@ -214,9 +220,7 @@
         box-shadow: 0 0 0 3px rgba(24, 85, 51, 0.1);
       }
 
-      input[type="email"]:invalid {
-        border-color: #d32f2f;
-      }
+      /* Removed :invalid rule here to prevent default red border */
 
       .button {
         padding: 16px 32px;
@@ -311,7 +315,7 @@
         }
 
         .header__logo {
-          height: 100px;
+          height: 80px; /* Consistent height */
         }
         
         #early-access-form > div {
@@ -344,7 +348,7 @@
         }
 
         .header__logo {
-          height: 80px;
+          height: 60px; /* Smaller height for small screens */
         }
 
         .features-section,
@@ -366,9 +370,11 @@
         if (!emailPattern.test(email)) {
           errorMessage.style.display = 'block';
           errorMessage.textContent = 'Please enter a valid email address';
+          emailInput.style.borderColor = '#d32f2f'; // Set border red on invalid
           return false;
         } else {
           errorMessage.style.display = 'none';
+          emailInput.style.borderColor = '#185533'; // Reset border color on valid
           return true;
         }
       }
@@ -396,6 +402,7 @@
           // Disable input
           emailInput.disabled = true;
           emailInput.style.background = '#f5f5f5';
+          emailInput.style.borderColor = '#f5f5f5'; // Ensure border is also greyed out
           
           // Reset after 3 seconds (optional)
           setTimeout(() => {
@@ -411,6 +418,20 @@
       document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('early-access-form');
         form.addEventListener('submit', handleFormSubmit);
+        
+        // Add an input event listener to remove red border on typing if invalid
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('input', function() {
+          const errorMessage = document.querySelector('.error-message');
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (emailInput.value === '') { // If input is cleared, remove error
+            errorMessage.style.display = 'none';
+            emailInput.style.borderColor = '#185533'; // Default border color
+          } else if (emailPattern.test(emailInput.value)) { // If it becomes valid
+            errorMessage.style.display = 'none';
+            emailInput.style.borderColor = '#185533'; // Default border color
+          }
+        });
       });
     </script>
   </head>
@@ -438,18 +459,22 @@
       <div class="wrapper-regular">
         <div class="features-grid">
           <div class="feature">
+            <img src="splitPayments.png" alt="Instant Splits Icon" class="feature__image">
             <h3>Instant Splits</h3>
             <p>Divide bills in seconds—no calculators needed.</p>
           </div>
           <div class="feature">
+            <img src="notification.png" alt="Payment Requests Icon" class="feature__image">
             <h3>Payment Requests</h3>
             <p>Send reminders with one tap.</p>
           </div>
           <div class="feature">
+            <img src="realTime.png" alt="Real-Time Transfers Icon" class="feature__image">
             <h3>Real-Time Transfers</h3>
             <p>Get paid back instantly to your account.</p>
           </div>
           <div class="feature">
+            <img src="groupTracking.png" alt="Group Tracking Icon" class="feature__image">
             <h3>Group Tracking</h3>
             <p>Perfect for flats, trips, and events.</p>
           </div>
