@@ -58,7 +58,7 @@
       }
 
       .header__logo {
-        height: 50px;
+        height: 150px;
       }
 
       main {
@@ -212,6 +212,10 @@
         box-shadow: 0 0 0 3px rgba(24, 85, 51, 0.1);
       }
 
+      input[type="email"]:invalid {
+        border-color: #d32f2f;
+      }
+
       .button {
         padding: 16px 32px;
         background: #185533;
@@ -230,18 +234,6 @@
         background: rgba(24, 85, 51, 0.8);
         border-color: rgba(24, 85, 51, 0.8);
         transform: translateY(-1px);
-      }
-
-      .illustration {
-        margin: 4rem 0 0 0;
-        text-align: center;
-      }
-
-      .illustration img {
-        width: 100%;
-        max-width: 1000px;
-        height: auto;
-        border-radius: 15px;
       }
 
       footer {
@@ -292,6 +284,13 @@
         opacity: 0.8;
       }
 
+      .error-message {
+        color: #d32f2f;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        display: none;
+      }
+
       @media (max-width: 768px) {
         .intro h1 {
           font-size: 2.5rem;
@@ -303,6 +302,10 @@
 
         .features-grid {
           grid-template-columns: 1fr;
+        }
+
+        .header__logo {
+          height: 100px;
         }
         
         #early-access-form > div {
@@ -334,6 +337,10 @@
           font-size: 2rem;
         }
 
+        .header__logo {
+          height: 80px;
+        }
+
         .features-section,
         .community-section,
         #early-access-form {
@@ -342,6 +349,24 @@
         }
       }
     </style>
+
+    <script>
+      function validateEmail() {
+        const emailInput = document.getElementById('email');
+        const errorMessage = document.querySelector('.error-message');
+        const email = emailInput.value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!emailPattern.test(email)) {
+          errorMessage.style.display = 'block';
+          errorMessage.textContent = 'Please enter a valid email address';
+          return false;
+        } else {
+          errorMessage.style.display = 'none';
+          return true;
+        }
+      }
+    </script>
   </head>
   <body class="home">
     <div class="body-wrapper">
@@ -391,7 +416,7 @@
       <p>Built for Kiwi students, by people who get it. SpotMe is a safe, supportive alternative to awkward borrowing or messy group chats. Together, we're making splitting expenses stress-free across NZ.</p>
     </div>
 
-    <form id="early-access-form" action="https://tally.so/r/nrWkZv" method="GET" aria-labelledby="early-access-heading">
+    <form id="early-access-form" onsubmit="return validateEmail()" aria-labelledby="early-access-heading">
       <h2 id="early-access-heading">Join the Waitlist & Get First Dibs on SpotMe</h2>
       <p class="form-subtitle">Be part of our launch crew, test features early, and experience effortless money sharing before anyone else.</p>
       <div>
@@ -402,14 +427,13 @@
           name="email" 
           placeholder="Your email address" 
           required 
-          aria-required="true" 
+          aria-required="true"
+          pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
         />
         <button type="submit" class="button">Sign Up for Early Access</button>
       </div>
+      <div class="error-message"></div>
     </form>
-  </div>
-  <div class="illustration">
-    <img src="spotMeArt.png" alt="SpotMe app illustration showing friends easily splitting expenses and sharing costs">
   </div>
 </main>
 
