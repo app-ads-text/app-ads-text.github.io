@@ -537,7 +537,7 @@
 <!-- Main Content -->
 <main class="main-content">
    <div class="content-card">
-       <p><strong>Last Updated:</strong> May 25, 2025</p>
+       <p><strong>Last Updated:</strong> October 27, 2026</p>
        <p><strong>Effective Date:</strong> May 25, 2025</p>
 
        <section id="overview">
@@ -573,15 +573,17 @@
            <ul>
                <li><strong>Account Information:</strong> When you create an account, we collect your email address, username, and password</li>
                <li><strong>Profile Information:</strong> Optional information like name, age range, profile picture, and preferences</li>
-               <li><strong>User Content:</strong> Information you input into our applications, such as journal entries, mood logs, goals, notes, or other user-generated content</li>
+               <li><strong>User Content:</strong> Information you input into our applications, such as journal entries, mood logs, goals, notes, messages, test answers, or other user-generated content. Many of our applications may store this content only on your device, in which case we may not be able to see it</li>
                <li><strong>Communication Data:</strong> Messages you send us through support channels, feedback forms, or in-app messaging</li>
                <li><strong>Payment Information:</strong> Billing details for premium features (processed through secure third-party payment processors)</li>
            </ul>
            
            <h3>2.2 Information Collected Automatically</h3>
            <ul>
-               <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, mobile network information</li>
-               <li><strong>Usage Data:</strong> Features used, time spent in app, interaction patterns, session duration</li>
+               <li><strong>Device Information:</strong> Device type, operating system, app version, language, unique device identifiers (such as Apple&#39;s identifier for vendor, an app-instance identifier, or, where you permit it, an advertising identifier), mobile network information</li>
+               <li><strong>Usage Data:</strong> Features used, screens viewed, actions taken in the app (for example, creating or completing something, using AI features, sharing or exporting, or opening a notification), time spent in app, interaction patterns, session duration, and steps in viewing and purchasing subscriptions</li>
+               <li><strong>Content Characteristics:</strong> General characteristics of what you enter, such as the approximate length of a message, which may be recorded instead of the content itself</li>
+               <li><strong>AI Usage Records:</strong> Where an app offers AI features, records such as the number of AI requests, the amount of AI processing used, its estimated cost, which AI provider handled a request, and whether your subscription includes AI features</li>
                <li><strong>Location Data:</strong> Approximate location based on IP address (precise location only if you grant permission)</li>
                <li><strong>Crash Data:</strong> Technical information about app crashes and errors to improve stability</li>
                <li><strong>Analytics Data:</strong> Aggregated usage statistics and performance metrics</li>
@@ -670,18 +672,22 @@
            </ul>
            
            <h3>4.3 Third-Party AI Services</h3>
-           <p>We may use third-party AI service providers (such as OpenAI, Google Cloud AI, or similar services) to power some AI features. When we do:</p>
+           <p>We may use third-party AI service providers, such as Google (including the Gemini API), OpenAI, or similar services, to power some AI features. When we do:</p>
            <ul>
-               <li>We only share the minimum data necessary for the AI service to function</li>
-               <li>We ensure these providers have strong privacy protections and do not use your data to train their general models (where technically feasible)</li>
-               <li>We use enterprise or business-tier services with enhanced privacy protections</li>
-               <li>Data shared with AI providers is processed in accordance with their privacy policies, which we require to meet high standards</li>
+               <li>Content you choose to use with an AI feature, such as your messages, conversation history, scenario or character details, a name you enter, answers you give, or a transcript, may be sent to an AI provider to generate a response</li>
+               <li>For voice features, your voice may be streamed to an AI provider, which may happen directly from your device</li>
+               <li>Content may be sent through our own servers on its way to an AI provider. Our servers may pass it on without keeping it, and may keep the AI usage records described in Section 2.2</li>
+               <li>If one AI provider is unavailable, a request may be handled by a different AI provider so the feature keeps working</li>
+               <li>Some apps may ask for your agreement before content is first sent to an AI provider</li>
+               <li>We aim to share only the data the AI service needs to function</li>
+               <li>We may use paid or business API access, under which providers generally do not use your content to train their models. Providers may keep content for a limited time, for example to detect abuse, under their own terms (see <a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a> and <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>)</li>
+               <li>Data shared with AI providers is processed in accordance with their privacy policies</li>
            </ul>
            
            <h3>4.4 Your Control Over AI Features</h3>
            <p>You have control over AI-powered features:</p>
            <ul>
-               <li><strong>Opt-Out:</strong> You can disable AI-powered features in your app settings at any time</li>
+               <li><strong>Opt-Out:</strong> AI features may be optional. Where they are, you can choose not to use them, and some apps may let you turn them off in settings</li>
                <li><strong>Data Deletion:</strong> When you delete your account or specific data, associated AI-processed insights are also removed</li>
                <li><strong>Transparency:</strong> We clearly label features that use AI technology within our applications</li>
                <li><strong>No Training on Your Data:</strong> Your personal data is not used to train AI models that benefit other users or third parties without your explicit consent</li>
@@ -723,13 +729,13 @@
            <h3>5.1 Service Providers</h3>
            <p>We share data with trusted third-party service providers who help us operate our applications:</p>
            <ul>
-               <li><strong>Cloud Hosting:</strong> Amazon Web Services (AWS), Google Cloud Platform</li>
+               <li><strong>Cloud Hosting:</strong> Amazon Web Services (AWS), Google Cloud Platform, Railway, or similar providers</li>
                <li><strong>Analytics:</strong> Google Analytics, Firebase Analytics</li>
-               <li><strong>Advertising:</strong> Google AdMob (Google Mobile Ads SDK), in apps that show ads, including Color Blind Test: Vision Check</li>
+               <li><strong>Advertising:</strong> Google AdMob (Google Mobile Ads SDK), in apps that show ads, including Color Blind Test: Vision Check. Where you permit tracking, ads may be personalised; where you don&#39;t, ads may be shown without your advertising identifier</li>
                <li><strong>Payment Processing:</strong> Stripe, Apple In-App Purchase, Google Play Billing</li>
                <li><strong>Customer Support:</strong> Help desk and support ticket systems</li>
                <li><strong>Email Services:</strong> Transactional and promotional email delivery</li>
-               <li><strong>AI Services:</strong> Third-party AI and machine learning providers (as described in Section 4)</li>
+               <li><strong>AI Services:</strong> Third-party AI and machine learning providers, such as Google (Gemini API) and OpenAI (as described in Section 4)</li>
            </ul>
            <p>These service providers are contractually obligated to protect your data and use it only for the purposes we specify.</p>
            
@@ -838,8 +844,9 @@
            <h3>7.3 How to Delete Your Data</h3>
            <p>You can delete your data by:</p>
            <ul>
-               <li>Deleting your account through app settings</li>
-               <li>Contacting us at hello@testappsco.com with a deletion request</li>
+               <li>Deleting your account through app settings (in apps that have accounts)</li>
+               <li>Deleting the app, which may remove data that is stored only on your device</li>
+               <li>Contacting us at hello@testappsco.com with a deletion request, including for records kept on our servers</li>
                <li>Using the "Delete My Data" option in your account settings</li>
            </ul>
            
@@ -958,7 +965,7 @@
                <li><strong>Cloud Storage:</strong> AWS, Google Cloud</li>
                <li><strong>Payment Processors:</strong> Stripe, Apple Pay, Google Pay</li>
                <li><strong>Customer Support:</strong> Help desk and ticketing systems</li>
-               <li><strong>AI Services:</strong> OpenAI, Google Cloud AI, or similar providers</li>
+               <li><strong>AI Services:</strong> Google (including the Gemini API), OpenAI, or similar providers</li>
            </ul>
            
            <h3>10.2 Third-Party Links</h3>
@@ -1260,6 +1267,7 @@
            <p><strong>Contact:</strong> <a href="mailto:hello@testappsco.com">hello@testappsco.com</a></p>
        </section>
 
+
        <div class="privacy-highlight">
            <h3>Final Notes</h3>
            <p>This Privacy Policy represents our commitment to protecting your privacy and maintaining transparency about our data practices. We regularly review and update our privacy practices to ensure they meet the highest standards and comply with applicable laws.</p>
@@ -1270,7 +1278,7 @@
        </div>
 
        <div class="contact-info">
-           <p><em>Last Updated: September 25, 2026</em></p>
+           <p><em>Last Updated: October 27, 2026</em></p>
            <p><em>This Privacy Policy is effective immediately and applies to all information collected on or after this date.</em></p>
        </div>
    </div>
