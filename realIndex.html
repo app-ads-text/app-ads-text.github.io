@@ -212,6 +212,30 @@
             text-align: center;
         }
         
+        .store-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .store-link {
+            font-family: 'Outfit', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 6px;
+            background-color: #111;
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+        
+        .store-link:hover {
+            opacity: 0.8;
+        }
+        
         /* Contact section styles */
         .contact-section {
             text-align: center;
@@ -505,6 +529,17 @@
             <div class="section-inner app-grid-container">
                 <h2>Featured Apps</h2>
                 <div class="app-grid">
+                    <!-- Color Blind Test: Vision Check -->
+                    <div class="app-item">
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a7/16/a9/a716a9f1-cd5a-47d4-0361-4afba6d9afff/AppIcon-0-0-1x_U007epad-0-1-85-220.png/146x0w.png" alt="Color Blind Test: Vision Check" class="app-icon">
+                        <div class="app-name">Color Blind Test: Vision Check</div>
+                        <div class="app-category">Education</div>
+                        <div class="store-links">
+                            <a href="https://apps.apple.com/nz/app/colour-blind-test-app/id6761285314" class="store-link">App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.testapps.colorblindtest&amp;hl=en" class="store-link">Google Play</a>
+                        </div>
+                    </div>
+                    
                     <!-- Love Language Test & Quiz -->
                     <a href="https://apps.apple.com/us/app/love-language-test-quiz/id6745423497" class="app-item">
                         <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ae/6b/c6/ae6bc66e-d149-9da2-397b-a6cd4ff16a5f/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.png" alt="Love Language Test & Quiz" class="app-icon">

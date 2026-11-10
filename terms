@@ -418,6 +418,10 @@
                        <div class="app-icon"></div>
                        <div class="app-name">Fuzzy Fish</div>
                    </div>
+                   <div class="app-item">
+                       <div class="app-icon"></div>
+                       <div class="app-name">Color Blind Test: Vision Check</div>
+                   </div>
                </div>
                <p style="margin-top: 15px; font-style: italic; font-size: 14px;">*This list includes our current applications but is not limited to these apps. Additional applications may be released and covered under these terms.</p>
            </div>
